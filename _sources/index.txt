@@ -1,0 +1,12 @@
+.. PyCoders Weekly Chinese Translate documentation master file, created by
+   sphinx-quickstart on Sun Mar  4 17:09:02 2012.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+PyCoder's Weekly 中文翻译
+=============================================================
+
+.. toctree::
+   :maxdepth: 3
+
+   issue3/index
