@@ -10,3 +10,4 @@ PyCoder's Weekly 中文翻译
    :maxdepth: 3
 
    issue3/index
+   author
