@@ -12,7 +12,7 @@ AST 模块：用 Python 修改 Python 代码
 CPython 的编译过程
 ------------------
 
-.. image:: /images/pep339.png
+.. image:: http://pyimg.fanhe.org/pep339.png
     :align: left
 
 在开始之前，我们应该先看看 CPython 的编译过程，这个过程在 `PEP 339 <http://www.python.org/dev/peps/pep-0339/>`_ 中有详细的描述。
