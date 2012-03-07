@@ -24,7 +24,7 @@ Part I
     … 
     >>> #An implementation of a repeat function
     >>> def repeat(fn, times):
-    …     for i in rannge(times):
+    …     for i in range(times):
     …         fn()
     … 
     >>> repeat(greeter, 3)
