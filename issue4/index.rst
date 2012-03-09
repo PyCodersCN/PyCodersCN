@@ -60,6 +60,8 @@ Python 中的 Rake ，轻松的在命令行中执行或调用 Python 函数，�
 `Siri Server Core <https://github.com/Eichhoernchen/SiriServerCore>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+一个Siri服务器（不是代理）的纯python实现。不幸的是，只有Iphone4S可以跟苹果服务器进行通讯。这个项目尝试用google语音识别API来重造这个Siri服务器。
+
 `Sublime 自动刷新插件 <https://github.com/gcollazo/BrowserRefresh-Sublime>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 安装这个插件之后，按下 ``command + shift + r`` 键会自动切换到 Google Chrome 中并且自动刷新当前页，如果你在按之前没有保存文件，这个插件会替你保存然后再刷新。
