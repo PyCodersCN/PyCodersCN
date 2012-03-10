@@ -42,7 +42,7 @@ PyCon 实时讨论是基于 Disqus 搭建的一个 web 应用，你可以在这�
 `Stack Overflow: 给人类看的解释：元类(metaclass)是什么? <http://www.reddit.com/r/Python/comments/qkg58/so_what_is_a_metaclass_for_humans/>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-我相信你们应该都在 Stackoverflow 上看过这篇文章了，SO (Stackoverflow，下同) 上曾经也对 Python 的 `装饰器 <http://stackoverflow.com/questions/739654/understanding-python-decorators/1594484#1594484>`_ ， `yield <http://stackoverflow.com/questions/231767/the-python-yield-keyword-explained/231855#231855>`_ 进行过很好的解释。我们认为这篇文章对于 Python 中元类的解释很有价值，同时在 Reddit 上的讨论也很不错，去看看吧。
+我相信你们应该都在 Stackoverflow 上看过这篇文章了，SO (Stackoverflow，下同) 上曾经也对 Python 的 `修饰器 <http://stackoverflow.com/questions/739654/understanding-python-decorators/1594484#1594484>`_ ， `yield <http://stackoverflow.com/questions/231767/the-python-yield-keyword-explained/231855#231855>`_ 进行过很好的解释。我们认为这篇文章对于 Python 中元类的解释很有价值，同时在 Reddit 上的讨论也很不错，去看看吧。
 
 项目
 ----
@@ -60,7 +60,7 @@ Python 中的 Rake ，轻松的在命令行中执行或调用 Python 函数，�
 `Siri Server Core <https://github.com/Eichhoernchen/SiriServerCore>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-一个Siri服务器（不是代理）的纯python实现。不幸的是，只有Iphone4S可以跟苹果服务器进行通讯。这个项目尝试用google语音识别API来重造这个Siri服务器。
+一个 Siri 服务器（不是代理）的纯 python 实现。不幸的是，只有 iPhone 4S 可以跟苹果服务器进行通讯。这个项目尝试用 Google 语音识别 API 来重造这个 Siri 服务器。
 
 `Sublime 自动刷新插件 <https://github.com/gcollazo/BrowserRefresh-Sublime>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -70,6 +70,6 @@ Python 中的 Rake ，轻松的在命令行中执行或调用 Python 函数，�
 ----
 
 `pip并行下载 <https://gist.github.com/1971720>`_
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-这段代码漂亮整洁的展示了pip并行化下载的可能性。其中任务调度是基于gevent的。这个想法令我们眼前一亮，我们希望pip官方能够实现这一特性，这样就可以在有着繁多继承关系的时候更快的部署系统。
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+这段代码漂亮整洁的展示了 pip 并行化下载的可能性。其中任务调度是基于 gevent 的。这个想法令我们眼前一亮，我们希望pip官方能够实现这一特性，这样就可以在有着繁多继承关系的时候更快的部署系统。
 
