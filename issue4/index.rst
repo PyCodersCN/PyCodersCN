@@ -42,7 +42,7 @@ PyCon 实时讨论是基于 Disqus 搭建的一个 web 应用，你可以在这�
 `Stack Overflow: 给人类看的解释：元类(metaclass)是什么? <http://www.reddit.com/r/Python/comments/qkg58/so_what_is_a_metaclass_for_humans/>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-我相信你们应该都在 Stackoverflow 上看过这篇文章了，SO (Stackoverflow，下同) 上曾经也对 Python 的 `装饰器 <http://stackoverflow.com/questions/739654/understanding-python-decorators/1594484#1594484>`_ ， `yield <http://stackoverflow.com/questions/231767/the-python-yield-keyword-explained/231855#231855>`_ 进行过很好的解释。我们认为这篇文章对于 Python 中元类的解释很有价值，同时在 Reddit 上的讨论也是很不错的，去看看吧。
+我相信你们应该都在 Stackoverflow 上看过这篇文章了，SO (Stackoverflow，下同) 上曾经也对 Python 的 `装饰器 <http://stackoverflow.com/questions/739654/understanding-python-decorators/1594484#1594484>`_ ， `yield <http://stackoverflow.com/questions/231767/the-python-yield-keyword-explained/231855#231855>`_ 进行过很好的解释。我们认为这篇文章对于 Python 中元类的解释很有价值，同时在 Reddit 上的讨论也很不错，去看看吧。
 
 项目
 ----
