@@ -40,7 +40,7 @@ Mezzanine 是一个 Django 为框架的 CMS 开源系统，最近发布了 1.0 �
 PyCon 实时讨论是基于 Disqus 搭建的一个 web 应用，你可以在这里问问题，向大会反馈意见以及找到志同道合的朋友。找到一个喜欢的话题进去讨论吧，或者建立一个你感兴趣的话题。
 
 `Stack Overflow: 给人类看的解释：元类(metaclass)是什么? <http://www.reddit.com/r/Python/comments/qkg58/so_what_is_a_metaclass_for_humans/>`_
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 我相信你们应该都在 Stackoverflow 上看过这篇文章了，SO (Stackoverflow，下同) 上曾经也对 Python 的 `修饰器 <http://stackoverflow.com/questions/739654/understanding-python-decorators/1594484#1594484>`_ ， `yield <http://stackoverflow.com/questions/231767/the-python-yield-keyword-explained/231855#231855>`_ 进行过很好的解释。我们认为这篇文章对于 Python 中元类的解释很有价值，同时在 Reddit 上的讨论也很不错，去看看吧。
 
@@ -69,7 +69,42 @@ Python 中的 Rake ，轻松的在命令行中执行或调用 Python 函数，�
 博文
 ----
 
+A review of Django's new password authentication
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+A brief overview of Django’s new password hashing abilities in Django 1.4, with some interesting commentary on the the difference between the public and private(source code) documentation about the default hashing algorithm used in 1.4.
+
+:doc:`Django 生产开发最佳设置 <django-settings-for-production-and-development-best-practices>`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Django settings are a tough one, everyone seems to have a different way to do it and they all have their own benefits and tradeoffs. In this article the author outlines 3 different ways to have environment specific settings for your different environments, he also lists plenty of sources that are useful to read when trying to make your decision.  This is worth checking out, even if you already do this in one way, its always useful to see different perspectives on solving the same problem.
+
+A Python reading list
+^^^^^^^^^^^^^^^^^^^^^
+
+This is a good list of books for a python developer looks to expand his or her knowledge as well as a list for kids and the complete novice python developer who is just starting out. This is a fairly complete list and I would definitely recommend taking a look at the list. The only real glaring omission I see in the list is `Expert Python Programming <http://www.packtpub.com/expert-python-programming/book>`_ which is a pretty fantastic book focused on best practices, optimizations, managing code and some different programming paradigms.
+
 `pip并行下载 <https://gist.github.com/1971720>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 这段代码漂亮整洁的展示了 pip 并行化下载的可能性。其中任务调度是基于 gevent 的。这个想法令我们眼前一亮，我们希望pip官方能够实现这一特性，这样就可以在有着繁多继承关系的时候更快的部署系统。
 
+:doc:`在 Python 中使用模糊匹配根据发音搜索 <using-fuzzy-matching-to-search-by-sound-with-python>`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In this article `Doug Hellmann <https://twitter.com/#!/doughellmann>`_ describes various approaches and algorithms that can be used to solve the problem of search for similar sounding words in a database of words. The article has some sample code as well, so you can hit the ground running if you wanted to try this out.
+
+Evolution of a Python programmer
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You probably wont see too many humorous posts in this newsletter but this has been popping up periodically over the last few years and is really pretty funny and interesting so we think its worth checking out.
+
+How Python 3 Should Have Worked
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+`Aaron Shwartz <https://twitter.com/#!/aaronsw>`_ co-founder of Reddit and original author of `web.py <http://webpy.org/>`_ has some interesting thoughts on how the Python 3 roll out should be happening. His main point is that transitioning to Python 3 should have worked in much the same way that transitioning Python 2.x versions worked, and to get Python 3 support in files you could just do “from __future__ import python3”.  We don’t think this will change anything, but definitely worth reading.
+
+.. toctree::
+    :hidden:
+
+    django-settings-for-production-and-development-best-practices
+    using-fuzzy-matching-to-search-by-sound-with-python
