@@ -57,7 +57,7 @@
 超越英语：NYSIIS
 ----------------
 
-在 Soundex 之后又发展出一些使用不同编码方案的算法，有的基于 Soundex 并改进了对照表，有的从头开始构建了自己的规则。所有这些算法都用不同的方法来处理 `音位 <http://zh.wikipedia.org/wiki/%E9%9F%B3%E4%BD%8D>`_ 以提高精确度。例如70年代，由Robert L. Taft 公布的 `纽约州模式识别与智能系统 <http://en.wikipedia.org/wiki/NYSIIS>`_ (New York State Identification and Intelligence System, NYSIIS) 算法。NYSIIS 最初被用于现在被称作纽约州刑事司法服务处 (New York State Division of Criminal Justice Services) 的部门，用以帮助他们识别他们数据库中的人。由于特别关注了对欧洲和西班牙姓氏中出现的音元的处理，它产生的结果好于 Soundex。
+在 Soundex 之后又发展出一些使用不同编码方案的算法，有的基于 Soundex 并改进了对照表，有的从头开始构建了自己的规则。所有这些算法都用不同的方法来处理 `音位 <http://zh.wikipedia.org/wiki/%E9%9F%B3%E4%BD%8D>`_ 以提高精确度。例如70年代，由Robert L. Taft 公布的 `纽约州模式识别与智能系统 <http://en.wikipedia.org/wiki/NYSIIS>`_ (New York State Identification and Intelligence System, NYSIIS) 算法。NYSIIS 最初被用于现在被称作纽约州刑事司法事物司 (New York State Division of Criminal Justice Services) 的部门，用以帮助他们识别他们数据库中的人。由于特别关注了对欧洲和西班牙姓氏中出现的音元的处理，它产生的结果好于 Soundex。
 
 ::
     
@@ -258,7 +258,7 @@
 ----
 
 * `The Soundex Indexing System <http://www.archives.gov/research/census/soundex.html>`_ , U.S. National Archives
-* \R. \L. Taft, Name Search Techniques (Albany, New York: New York State Identification and Intelligence System, 1970) 
+* \R. \L. Taft, Name Search Techniques (Albany, New York: New York State Identification and Intelligence System, 1970)
 * Lawrence Philips, "`The Double Metaphone Search Algorithm <http://drdobbs.com/184401251?pgno=2>`_," Dr. Dobb's (June 1, 2000)
 * `Fuzzy <http://pypi.python.org/pypi/Fuzzy>`_
 
