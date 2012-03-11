@@ -105,6 +105,10 @@ Django设置是很困难的一件事，每个人都似乎有不同的方式做�
 
 `Aaron Shwartz <https://twitter.com/#!/aaronsw>`_ 的创始人和 `web.py <http://webpy.org/>`_ 的作者。他有一些关于如何实现推广Python 3的有趣想法。他的主要观点是Python 3的过渡方式应该同Python 2.x系列保持一致，令Python 3支持文件所以你可以只用 ``from __future__ import python3`` . 我们不认为这些想法能够改变什么，但是绝对值得你一读。 
 
+目录译者： `wangtz <https://github.com/wangtz>`_ & `Yueh <http://yueh.me>`_ & `Zeray Rice <http://www.fanhe.org>`_ 
+
+感谢 `bcxx <http://youknowmymind.com/>`_ 的校对工作。
+
 .. toctree::
     :hidden:
     

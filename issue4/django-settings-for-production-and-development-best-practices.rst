@@ -1,6 +1,9 @@
 Django 生产开发最佳设置
 =============================
 
+原文地址： http://www.sparklewise.com/django-settings-for-production-and-development-best-practices/
+
+译者： `TheLoverZ <http://zhuang13.de>`_
 
 当你刚开始使用 Django 的时候，你会很诧异竟然没有一个标准的配置。然而，作为一个初学者，确实有一些简单好用的办法。
 

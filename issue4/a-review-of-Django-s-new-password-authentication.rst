@@ -1,6 +1,10 @@
 Django 新的密码验证方法评测
 ===========================
 
+原文地址： http://www.levigross.com/post/18880148948/a-review-of-djangos-new-password-authentication
+
+译者： `Dukedyb <http://www.douban.com/people/craigfeng/>`_
+
 Django 刚刚发布的 1.4 版本中包含了一些安全方面的重要提升。其中一个是使用 PBKDF2 密码加密算法代替了 SHA1 。另外一个特性是你可以添加自己的密码加密方法。
 
 Django 会使用你提供的第一个密码加密方法（在你的 ``setting.py`` 文件里要至少有一个方法）

@@ -1,6 +1,10 @@
 Python 阅读书目推荐
 ===================
 
+原文地址： http://www.informit.com/articles/article.aspx?p=1849069
+
+译者： `Zeray Rice <http://www.fanhe.org>` & `Yueh <http://yueh.me>`_
+
 **Wesley J. Chun, 《Python 核心编程》的作者 (** `Informit <http://www.informit.com/store/product.aspx?isbn=0132678209>`_ | `豆瓣 <http://book.douban.com/subject/3112503/>`_ **)，为大家推荐了一系列的他觉得很不错的 Pyhton 书目，不管你是初学者还是 Python 开发大牛，都应该来看一下他推荐的书。**
 
 在我十五年的 Python 生涯中，有无数人问过我类似“你能向我推荐一些 Python 相关的好书么？”这样的问题，不过作为一个写书的人，当然会说“这还用问，当然是我的书啊！”。

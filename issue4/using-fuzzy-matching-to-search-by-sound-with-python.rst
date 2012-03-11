@@ -1,6 +1,10 @@
 在 Python 中使用模糊匹配根据发音搜索
 ====================================
 
+原文地址： http://www.informit.com/articles/article.aspx?p=1848528
+
+译者： `Upsuper <http://upsuper.org/>`_
+
 **当你编写代码搜索数据库时，你不能总是依赖于相信所有的数据项都有正确的拼写。DreamHost 的开发者以及《Python 标准库编程范例》(** `The Python Standard Library by Example <http://www.informit.com/store/product.aspx?isbn=0321767349>`_ **) 的作者 Doug Hellmann 在这篇文章中回顾了一些根据目标的发音，而不是准确的拼写，进行数据库搜索的方法。**
 
 在数据库中搜索人名是一项独特的挑战。对于不同来源和不同年代的数据，你不但不能指望其中名字的拼写是正确的，甚至相同的名字如果多次出现时，它们的拼写都不一定一样。而储存的数据和搜索项之间也有可能因为个人喜好、文化差异、 `同音词 <http://zh.wikipedia.org/wiki/%E5%90%8C%E9%9F%B3%E7%95%B0%E7%BE%A9%E8%AA%9E>`_ 、拼写错误、文盲或仅仅因为在某些时期根本没有标准拼法而出现差异。这些问题在历史学家、谱系学家和其他研究者的手写的文本记录中尤为常见。
