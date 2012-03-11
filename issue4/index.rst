@@ -9,7 +9,7 @@ Hi Pythonistas,
 
 同时不要忘记把 `我们 <https://twitter.com/#!/pycoders>`_ 推荐给你的朋友～
 
-P.S. 如果你真的很想知道那个跳舞机器人是啥，偷偷地告诉你：就是那个今年 PyCon 开场的会跳舞的机器人哟。
+P.S. 如果你真的很想知道那个跳舞机器人是啥，偷偷地告诉你：就是那个今年 PyCon 开场的会跳舞的机器人哟。（译者注： 本届 PyCon 大会的开场视频可以在 `这里 <http://pyvideo.org/video/622/introduction-and-welcome>`_ 看到）
 
 --
 Mahdi and Mike 
@@ -72,40 +72,44 @@ Python 中的 Rake ，轻松的在命令行中执行或调用 Python 函数，�
 :doc:`Django 新的密码验证方法评测 <a-review-of-Django-s-new-password-authentication>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A brief overview of Django’s new password hashing abilities in Django 1.4, with some interesting commentary on the the difference between the public and private(source code) documentation about the default hashing algorithm used in 1.4.
+一个关于Django的新密码的哈希能力的简要概述，和使用开源或私人文档(源代码)的关于使用在1.4上的默认哈希算法差异的一些有趣的评论。
 
 :doc:`Django 生产开发最佳设置 <django-settings-for-production-and-development-best-practices>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Django settings are a tough one, everyone seems to have a different way to do it and they all have their own benefits and tradeoffs. In this article the author outlines 3 different ways to have environment specific settings for your different environments, he also lists plenty of sources that are useful to read when trying to make your decision.  This is worth checking out, even if you already do this in one way, its always useful to see different perspectives on solving the same problem.
+Django设置是很困难的一件事，每个人都似乎有不同的方式做到这一点，这些方法也都有自己的优缺点。这篇文章中，作者列出了3种不同的方式为你的不同的环境做环境特定设置，他还列出了大量的能让你作出判断的材料。这很值得一试，即使你已经做了设置，它总是能够让你在解决相同问题上发现不同观点。
 
-A Python reading list
-^^^^^^^^^^^^^^^^^^^^^
+:doc:`Python 阅读书目推荐 <a-python-reading-list>`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This is a good list of books for a python developer looks to expand his or her knowledge as well as a list for kids and the complete novice python developer who is just starting out. This is a fairly complete list and I would definitely recommend taking a look at the list. The only real glaring omission I see in the list is `Expert Python Programming <http://www.packtpub.com/expert-python-programming/book>`_ which is a pretty fantastic book focused on best practices, optimizations, managing code and some different programming paradigms.
+这是一个能够令Python开发者和Python新手扩充只是的很棒的书单。这个书单相当完整，我强烈推荐你看看这个书单。这本书单唯一的遗漏是一本侧重于最佳实践，优化，管理代码和一些不同的编程范式教学的叫做 `Python高级编程 <http://www.packtpub.com/expert-python-programming/book>`_ 的书。
 
 `pip并行下载 <https://gist.github.com/1971720>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 这段代码漂亮整洁的展示了 pip 并行化下载的可能性。其中任务调度是基于 gevent 的。这个想法令我们眼前一亮，我们希望pip官方能够实现这一特性，这样就可以在有着繁多继承关系的时候更快的部署系统。
 
 :doc:`在 Python 中使用模糊匹配根据发音搜索 <using-fuzzy-matching-to-search-by-sound-with-python>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In this article `Doug Hellmann <https://twitter.com/#!/doughellmann>`_ describes various approaches and algorithms that can be used to solve the problem of search for similar sounding words in a database of words. The article has some sample code as well, so you can hit the ground running if you wanted to try this out.
+`Doug Hellmann <http://pycoders.us4.list-manage.com/track/click?u=9735795484d2e4c204da82a29&id=ef5272fe0d&e=33300bf8fc>`_ 在这篇文章中介绍的各种方法和算法可以用来解决数据库内搜索相同发音单词的要求。文章中包含一些示例代码，所以，通过这篇文章，你能够搞定问题。
 
-Evolution of a Python programmer
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You probably wont see too many humorous posts in this newsletter but this has been popping up periodically over the last few years and is really pretty funny and interesting so we think its worth checking out.
+`Python 程序员的发展历程 <https://gist.github.com/289467>`_
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-How Python 3 Should Have Worked
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+在这份 newletter 中，你也许不会发现太多幽默的文章，虽然这篇文章在几年前就已经发表了，但是真的很有意思，所以我们认为你值得看一看。
 
-`Aaron Shwartz <https://twitter.com/#!/aaronsw>`_ co-founder of Reddit and original author of `web.py <http://webpy.org/>`_ has some interesting thoughts on how the Python 3 roll out should be happening. His main point is that transitioning to Python 3 should have worked in much the same way that transitioning Python 2.x versions worked, and to get Python 3 support in files you could just do “from __future__ import python3”.  We don’t think this will change anything, but definitely worth reading.
+:doc:`如何过渡至 Python 3 <how-python3-should-have-worked>`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+`Aaron Shwartz <https://twitter.com/#!/aaronsw>`_ 的创始人和 `web.py <http://webpy.org/>`_ 的作者。他有一些关于如何实现推广Python 3的有趣想法。他的主要观点是Python 3的过渡方式应该同Python 2.x系列保持一致，令Python 3支持文件所以你可以只用 ``from __future__ import python3`` . 我们不认为这些想法能够改变什么，但是绝对值得你一读。 
 
 .. toctree::
     :hidden:
     
     a-review-of-Django-s-new-password-authentication
     django-settings-for-production-and-development-best-practices
+    a-python-reading-list
     using-fuzzy-matching-to-search-by-sound-with-python
+    how-python3-should-have-worked
