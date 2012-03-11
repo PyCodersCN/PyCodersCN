@@ -69,8 +69,8 @@ Python 中的 Rake ，轻松的在命令行中执行或调用 Python 函数，�
 博文
 ----
 
-A review of Django's new password authentication
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+:doc:`Django 新的密码验证方法评测 <a-review-of-Django-s-new-password-authentication>`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A brief overview of Django’s new password hashing abilities in Django 1.4, with some interesting commentary on the the difference between the public and private(source code) documentation about the default hashing algorithm used in 1.4.
 
@@ -105,6 +105,7 @@ How Python 3 Should Have Worked
 
 .. toctree::
     :hidden:
-
+    
+    a-review-of-Django-s-new-password-authentication
     django-settings-for-production-and-development-best-practices
     using-fuzzy-matching-to-search-by-sound-with-python
