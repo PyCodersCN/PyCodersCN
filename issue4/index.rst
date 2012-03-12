@@ -82,7 +82,7 @@ Django 设置是很困难的一件事，每个人都似乎有不同的方式做�
 :doc:`Python 阅读书目推荐 <a-python-reading-list>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-这是一个能够令 Python 开发者和 Python 新手扩充只是的很棒的书单。这个书单相当完整，我强烈推荐你看看这个书单。这本书单唯一的遗漏是一本侧重于最佳实践，优化，管理代码和一些不同的编程范式教学的叫做 `Python 高级编程 <http://www.packtpub.com/expert-python-programming/book>`_ 的书。
+这是一个能够令 Python 开发者和 Python 新手扩充知识的很棒的书单。这个书单相当完整，我强烈推荐你看看这个书单。这本书单唯一的遗漏是一本侧重于最佳实践，优化，管理代码和一些不同的编程范式教学的叫做 `Python 高级编程 <http://www.packtpub.com/expert-python-programming/book>`_ 的书。
 
 `pip 并行下载 <https://gist.github.com/1971720>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -103,7 +103,7 @@ Django 设置是很困难的一件事，每个人都似乎有不同的方式做�
 :doc:`如何过渡至 Python 3 <how-python3-should-have-worked>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-`Aaron Shwartz <https://twitter.com/#!/aaronsw>`_ 的创始人和 `web.py <http://webpy.org/>`_ 的作者。他有一些关于如何实现推广 Python 3 的有趣想法。他的主要观点是 Python 3 的过渡方式应该同 Python 2.x 系列保持一致，令 Python 3 支持文件所以你可以只用 ``from __future__ import python3`` 。我们不认为这些想法能够改变什么，但是绝对值得你一读。
+`Aaron Shwartz <https://twitter.com/#!/aaronsw>`_ 是 Reddit 的创始人和 `web.py <http://webpy.org/>`_ 的作者。他有一些关于如何实现推广 Python 3 的有趣想法。他的主要观点是 Python 3 的过渡方式应该同 Python 2.x 系列保持一致，令 Python 3 支持文件所以你可以只用 ``from __future__ import python3`` 。我们不认为这些想法能够改变什么，但是绝对值得你一读。
 
 目录译者： `wangtz <https://github.com/wangtz>`_ & `Yueh <http://yueh.me>`_ & `Zeray Rice <http://www.fanhe.org>`_ 
 
