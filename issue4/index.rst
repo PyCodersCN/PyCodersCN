@@ -9,7 +9,7 @@ Hi Pythonistas,
 
 同时不要忘记把 `我们 <https://twitter.com/#!/pycoders>`_ 推荐给你的朋友～
 
-P.S. 如果你真的很想知道那个跳舞机器人是啥，偷偷地告诉你：就是那个今年 PyCon 开场的会跳舞的机器人哟。（译者注： 本届 PyCon 大会的开场视频可以在 `这里 <http://pyvideo.org/video/622/introduction-and-welcome>`_ 看到）
+P.S. 如果你真的很想知道那个跳舞机器人是啥，偷偷地告诉你：就是那个今年 PyCon 开场的会跳舞的机器人哟。(译者注：本届 PyCon 大会的开场视频可以在 `这里 <http://pyvideo.org/video/622/introduction-and-welcome>`_ 看到)
 
 --
 Mahdi and Mike 
@@ -29,7 +29,7 @@ Mezzanine 是一个 Django 为框架的 CMS 开源系统，最近发布了 1.0 �
 
 `历年 PyCon 视频 (2009-2011) <http://blip.tv/pycon-us-videos-2009-2010-2011>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-本周是 PyCon 周，来这里看看你有没有错过什么 PyCon 上的好东西吧（如果你都看过了，无视这个好了……）
+本周是 PyCon 周，来这里看看你有没有错过什么 PyCon 上的好东西吧 (如果你都看过了，无视这个好了……)
 
 讨论
 ----
@@ -39,10 +39,10 @@ Mezzanine 是一个 Django 为框架的 CMS 开源系统，最近发布了 1.0 �
 
 PyCon 实时讨论是基于 Disqus 搭建的一个 web 应用，你可以在这里问问题，向大会反馈意见以及找到志同道合的朋友。找到一个喜欢的话题进去讨论吧，或者建立一个你感兴趣的话题。
 
-`Stack Overflow: 给人类看的解释：元类(metaclass)是什么? <http://www.reddit.com/r/Python/comments/qkg58/so_what_is_a_metaclass_for_humans/>`_
+`Stack Overflow: 给人类看的解释：元类 (metaclass) 是什么? <http://www.reddit.com/r/Python/comments/qkg58/so_what_is_a_metaclass_for_humans/>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-我相信你们应该都在 Stackoverflow 上看过这篇文章了，SO (Stackoverflow，下同) 上曾经也对 Python 的 `修饰器 <http://stackoverflow.com/questions/739654/understanding-python-decorators/1594484#1594484>`_ ， `yield <http://stackoverflow.com/questions/231767/the-python-yield-keyword-explained/231855#231855>`_ 进行过很好的解释。我们认为这篇文章对于 Python 中元类的解释很有价值，同时在 Reddit 上的讨论也很不错，去看看吧。
+我相信你们应该都在 Stack Overflow 上看过这篇文章了，SO (Stack Overflow，下同) 上曾经也对 Python 的 `修饰器 <http://stackoverflow.com/questions/739654/understanding-python-decorators/1594484#1594484>`_ ， `yield <http://stackoverflow.com/questions/231767/the-python-yield-keyword-explained/231855#231855>`_ 进行过很好的解释。我们认为这篇文章对于 Python 中元类的解释很有价值，同时在 Reddit 上的讨论也很不错，去看看吧。
 
 项目
 ----
@@ -50,7 +50,7 @@ PyCon 实时讨论是基于 Disqus 搭建的一个 web 应用，你可以在这�
 `Shovel <https://github.com/seomoz/shovel>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Python 中的 Rake ，轻松的在命令行中执行或调用 Python 函数，最近还添加了一项新特性：在浏览器中来执行这些任务（给懒人的特性）。
+Python 中的 Rake ，轻松的在命令行中执行或调用 Python 函数，最近还添加了一项新特性：在浏览器中来执行这些任务 (给懒人的特性)。
 
 `Cyclone <http://cyclone.io/>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -60,7 +60,7 @@ Python 中的 Rake ，轻松的在命令行中执行或调用 Python 函数，�
 `Siri Server Core <https://github.com/Eichhoernchen/SiriServerCore>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-一个 Siri 服务器（不是代理）的纯 python 实现。不幸的是，只有 iPhone 4S 可以跟苹果服务器进行通讯。这个项目尝试用 Google 语音识别 API 来重造这个 Siri 服务器。
+一个 Siri 服务器 (不是代理) 的纯 python 实现。不幸的是，只有 iPhone 4S 可以跟苹果服务器进行通讯。这个项目尝试用 Google 语音识别 API 来重造这个 Siri 服务器。
 
 `Sublime 自动刷新插件 <https://github.com/gcollazo/BrowserRefresh-Sublime>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -72,22 +72,22 @@ Python 中的 Rake ，轻松的在命令行中执行或调用 Python 函数，�
 :doc:`Django 新的密码验证方法评测 <a-review-of-Django-s-new-password-authentication>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-一个关于Django的新密码的哈希能力的简要概述，和使用开源或私人文档(源代码)的关于使用在1.4上的默认哈希算法差异的一些有趣的评论。
+一个关于 Django 的新密码的哈希能力的简要概述，和使用开源或私人文档 (源代码) 的关于使用在 1.4 上的默认哈希算法差异的一些有趣的评论。
 
 :doc:`Django 生产开发最佳设置 <django-settings-for-production-and-development-best-practices>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Django设置是很困难的一件事，每个人都似乎有不同的方式做到这一点，这些方法也都有自己的优缺点。这篇文章中，作者列出了3种不同的方式为你的不同的环境做环境特定设置，他还列出了大量的能让你作出判断的材料。这很值得一试，即使你已经做了设置，它总是能够让你在解决相同问题上发现不同观点。
+Django 设置是很困难的一件事，每个人都似乎有不同的方式做到这一点，这些方法也都有自己的优缺点。这篇文章中，作者列出了3种不同的方式为你的不同的环境做环境特定设置，他还列出了大量的能让你作出判断的材料。这很值得一试，即使你已经做了设置，它总是能够让你在解决相同问题上发现不同观点。
 
 :doc:`Python 阅读书目推荐 <a-python-reading-list>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-这是一个能够令Python开发者和Python新手扩充只是的很棒的书单。这个书单相当完整，我强烈推荐你看看这个书单。这本书单唯一的遗漏是一本侧重于最佳实践，优化，管理代码和一些不同的编程范式教学的叫做 `Python高级编程 <http://www.packtpub.com/expert-python-programming/book>`_ 的书。
+这是一个能够令 Python 开发者和 Python 新手扩充只是的很棒的书单。这个书单相当完整，我强烈推荐你看看这个书单。这本书单唯一的遗漏是一本侧重于最佳实践，优化，管理代码和一些不同的编程范式教学的叫做 `Python 高级编程 <http://www.packtpub.com/expert-python-programming/book>`_ 的书。
 
-`pip并行下载 <https://gist.github.com/1971720>`_
+`pip 并行下载 <https://gist.github.com/1971720>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-这段代码漂亮整洁的展示了 pip 并行化下载的可能性。其中任务调度是基于 gevent 的。这个想法令我们眼前一亮，我们希望pip官方能够实现这一特性，这样就可以在有着繁多继承关系的时候更快的部署系统。
+这段代码漂亮整洁的展示了 pip 并行化下载的可能性。其中任务调度是基于 gevent 的。这个想法令我们眼前一亮，我们希望 pip 官方能够实现这一特性，这样就可以在有着繁多继承关系的时候更快的部署系统。
 
 :doc:`在 Python 中使用模糊匹配根据发音搜索 <using-fuzzy-matching-to-search-by-sound-with-python>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -103,7 +103,7 @@ Django设置是很困难的一件事，每个人都似乎有不同的方式做�
 :doc:`如何过渡至 Python 3 <how-python3-should-have-worked>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-`Aaron Shwartz <https://twitter.com/#!/aaronsw>`_ 的创始人和 `web.py <http://webpy.org/>`_ 的作者。他有一些关于如何实现推广Python 3的有趣想法。他的主要观点是Python 3的过渡方式应该同Python 2.x系列保持一致，令Python 3支持文件所以你可以只用 ``from __future__ import python3`` . 我们不认为这些想法能够改变什么，但是绝对值得你一读。 
+`Aaron Shwartz <https://twitter.com/#!/aaronsw>`_ 的创始人和 `web.py <http://webpy.org/>`_ 的作者。他有一些关于如何实现推广 Python 3 的有趣想法。他的主要观点是 Python 3 的过渡方式应该同 Python 2.x 系列保持一致，令 Python 3 支持文件所以你可以只用 ``from __future__ import python3`` 。我们不认为这些想法能够改变什么，但是绝对值得你一读。
 
 目录译者： `wangtz <https://github.com/wangtz>`_ & `Yueh <http://yueh.me>`_ & `Zeray Rice <http://www.fanhe.org>`_ 
 
