@@ -3,7 +3,6 @@
 
 译注：这篇文章实在是翻译的相当吃力，因为文中的东西平时几乎不怎么接触（我都是直接用UTC），所以如果有错误请不吝指正，谢谢！
 
-
 时间真是一个复杂的东西
 ------------------------
 - 相比三个星期以前，我学到了更多关于时间的知识。
@@ -14,29 +13,26 @@
 - “瞬间”（instant）指什么？
 - 时间标准
 - 时区
-- Python 模块：time, calendar, 显式和隐式的时间（Naive vs Aware datetimes）, pytz
+- Python 模块： ``time`` , ``calendar`` , 显式和隐式的时间（Naive vs Aware datetimes）, ``pytz``
 - 互用性
 
 瞬间
 ------------------
 - “瞬间是指一个极小时间内的时刻，这个时刻所经历的过程是瞬时的。”
 - http://en.wikipedia.org/wiki/Instant
-
-瞬间
--------------
 - 比如说这个时间：2012-03-10 10:30:00 PST
-- 上面的例子和这个例子是同一个时间：2012-03-10 13:30:00 EST
-- 很有趣吧？我们来看看
+- 上面的例子和这个是同一个时间：2012-03-10 13:30:00 EST
+- 很有趣吧？我们来看看⋯
 
 时间标准
 --------------------
-- 时间标准是测量时间用的规范：或者是时间流逝的速度，或者是具体时间点，或者都有。
+- “时间标准是测量时间用的规范：或者是时间流逝的速度，或者是具体时间点，或者都有。”
 - http://en.wikipedia.org/wiki/Time_standard
 - 比如：UT\ :sub:`1`\，TAI，UTC，POSIX，或者是别的
 
 UT\ :sub:`1`\
 ----------------
-- 完全按照地球的自转来定义。
+- 完全按照地球的自转来测算。
 - 一秒的长度取决于潮汐，天气，彗星，等等。
 - 地球自转角度 = 2π(0.7790572732640 + 1.00273781191135448T\ :sub:`u`) 弧度
 - http://en.wikipedia.org/wiki/Ut1
@@ -54,7 +50,7 @@ UTC
 -----------
 - 协调世界时，又称世界标准时间或世界协调时间（Coordinated Universal Time）。
 - 以原子时秒长为基础，通常比 UT1 的秒短那么一点儿。
-- 在有需要的情况下会在协调世界时内加上正或负闰秒
+- 在有需要的情况下会在协调世界时内加上正或负闰秒。
 - 2012-06-30 23:59:60 UTC 是真实存在的！
 - 一种称为协调世界时的折衷时标于1972年面世。
 
@@ -74,13 +70,13 @@ POSIX（UNIX）时间戳
         y = year - 1
         return y*365 + y//4 - y//100 + y//400
 
-- Will not agree with history books on dates before October 1582, and is muddy into the early 1900s（这个貌似和历史有关了）
+- Will not agree with history books on dates before October 1582, and is muddy into the early 1900s（这个貌似和历史以及他们那里的常识有关了，貌似是说20世纪的时候日历做了调整来弥补之前的误差之类的⋯）
 - http://en.wikipedia.org/wiki/Gregorian_calendar
 - `公历（中文版） <http://zh.wikipedia.org/wiki/%E5%85%AC%E5%8E%86>`_
 
 闰秒和闰日
 ----------------
-- 闰秒以“日居正中”作为中午的标准。
+- 闰秒以“日居正中”作为正午的标准。
 - 闰日以春分日作为标准。
 
 时区
@@ -109,11 +105,11 @@ GMT != UTC
 - “永远使用 UTC 或者 UNIX 时间戳。”
 - “不要使用偏移量感知日期时间。”
 
-用户的输入输出
+关于用户的输入输出
 ---------------------------
 - 用 Armin Ronacher 的话来说就是：
 - “如果你从用户那里得到了本地时间，马上把它转化为 UTC 时间。如果这个转换有歧义的话需要通知用户。”
-- “Rebase for Formatting (then throw away that filthy offset aware datetime object)”（待翻译）
+- “转换以后整个世界都清静了（然后什么偏移量的都去死吧！）”
 - From http://lucumr.pocoo.org/2011/7/15/eppur-si-muove/
 
 Python 的一些时间模块
@@ -134,8 +130,7 @@ time
 - 有助于消除歧义，比如说 01:30
 - 用 ``time.time()`` 来得到当前的 POSIX 时间戳。
 - 用 ``time.gmtime(t)`` 来得到一个 ``struct_time`` 
-- (if t == None) the current instant, or（待翻译）
-- the provided POSIX timestamp（待翻译）
+- 如果 ``(t == None)`` 则是当前的时间，或者提供一个 POSIX 时间戳。
 
 calendar
 ---------------
@@ -185,7 +180,7 @@ datetime - 要做的
     ...   is_dst=None)
     pytz.tzinfo.AmbiguousTimeError: 2011-11-06 01:30:00
 
-- 为当前时刻得到给定时区的一个显式的时间，这儿有个不错的办法：
+- 为当前时刻得到一个给定时区的显式时间，这儿有个不错的办法：
 
 ::
 
@@ -235,7 +230,7 @@ datetime - 不要做的
 
 MySQL
 ---------------
-- 日期：纯数据，没有时区。
+- 日期：纯日期，没有时区。
 - 时间：类似 Python 的显式的时间。
 - 时间戳：在内部使用 POSIX 时间戳存储。有读取需求的时候按照需求给定。
 - 如果需要改变时区的话使用这个：``CONVERT_TZ(dt,from_tz,to_tz)`` ，参见 `这里 <http://dev.mysql.com/doc/refman/5.1/en/date-and-time-functions.html#function_convert-tz>`_ 。
@@ -243,7 +238,7 @@ MySQL
 
 PostgreSQL
 --------------------
-- 日期：纯数据，没有时区。
+- 日期：纯日期，没有时区。
 - 时间：“我们不建议使用带时区的时间。”
 - 时间戳：在内部按照从 2000-01-01 00:00:00 UTC 到现在的秒数存储。有读取需求的时候按照需求给定。
 - 如果需要改变时区的话使用这个： ``AT TIME ZONE`` 。
@@ -254,7 +249,7 @@ SQLite
 - 文本型：“按照 ISO8601 标准。即YYYY-MM-DD HH:MM:SS.SSS”
 - 实型：“按照从格林尼治标准时间的公元前4714年12月24号正午到现在的天数。”（这个好奇怪，我没有翻译错吧。）
 - 整型：“和 UNIX 时间一样，取从 1970-01-01 00:00:00 UTC 到现在的秒数。”
-- 内置的时间和日期函数很有限，可以使用 ``unixepoch`` ， ``localtime`` ， ``utc`` 。
+- 内置的时间和日期函数很有限，但可以使用 ``unixepoch`` ， ``localtime`` ， ``utc`` 。
 - `SQLite 官方文档 <http://www.sqlite.org/lang_datefunc.html>`_
 
 JavaScript
@@ -305,7 +300,7 @@ JavaScript
 
 timegm 的实现
 ------------------------
-- 如果你的 Python 版本在2.7以上，那么你只需要：
+- 如果你的 Python 版本在 2.7 以上，那么你只需要：
 
 ::
 
