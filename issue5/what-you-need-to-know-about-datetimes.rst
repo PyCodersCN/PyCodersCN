@@ -1,6 +1,10 @@
 关于日期你需要知道的
 =============================
 
+原文： `<http://taaviburns.ca/what_you_need_to_know_about_datetimes/what_you_need_to_know_about_datetimes.pdf>`_
+
+译者： `TheLoverZ <http://zhuang13.de>`_ 
+
 译注：这篇文章实在是翻译的相当吃力，因为文中的东西平时几乎不怎么接触（我都是直接用UTC），所以如果有错误请不吝指正，谢谢！
 
 时间真是一个复杂的东西
