@@ -5,7 +5,7 @@ Hi Pythonistas,
 
 本周真是疯狂的一周，本期 PyCoders 充满了各种各样的关于 Python 的新闻。我们尽可能的把在 PyCon 上发生的一切都告诉给你。
 
-我们正在征集一些关于 PyCoders 的推荐语放在我们的首页商，如果你希望在我们的主页上出现你的名字，以及想对我们说一些什么的话，请在 Twitter `@pycoders <https://twitter.com/#!/pycoders>`_ 。我们很期待听到你的声音。
+我们正在征集一些关于 PyCoders 的推荐语放在我们的首页上，如果你希望在我们的主页上出现你的名字，以及想对我们说一些什么的话，请在 Twitter `@pycoders <https://twitter.com/#!/pycoders>`_ 。我们很期待听到你的声音。
 
 让我们继续吧。
 
