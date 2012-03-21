@@ -308,9 +308,9 @@ Python 3 中对于 bytes 和 unicode 的处理非常严格，你被迫去处理�
 
 一些其他你可能需要的资源
 
-Joel Spolsky 编写的 `The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!) <www.joelonsoftware.com/articles/Unicode.html>`_ 概括了 Unicode 的工作方式和原因。虽然没有 Python 的内容，但是比我解释的详细多了!
+Joel Spolsky 编写的 `The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!) <http://www.joelonsoftware.com/articles/Unicode.html>`_ 概括了 Unicode 的工作方式和原因。虽然没有 Python 的内容，但是比我解释的详细多了!
 
-如果你需要处理一些语义上的 Unicode 字符问题。那么 `unicodedata module <docs.python.org/library/unicodedata.html>`_ 也许会对你有些帮助。
+如果你需要处理一些语义上的 Unicode 字符问题。那么 `unicodedata module <http://docs.python.org/library/unicodedata.html>`_ 也许会对你有些帮助。
 
 如果你希望找一些 Unicode 来测试的话，网上各种的 `编码文本计算器 <http://fsymbols.com/generators/encool>`_ 会对你很有帮助。
 
