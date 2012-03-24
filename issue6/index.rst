@@ -16,12 +16,12 @@ Mahdi and Mike
 在计算机科学或编程教学中使用 Python
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-MIT has an Introduction to Computer Science course where the fundamentals of programming and Computer Science are taught with python. 
+MIT 对在计算机科学教学中使用 Python 作了一个介绍。
 
 Pyramid 网页框架 1.3 版本发布
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Version 1.3 of the Pyramid Web Framework dropped this week. Among other features, Pyramid 1.3 has support for Python 3 compatibility. Check out the site for the full list of feature additions and updates.
+Pyramid 网页框架发布了 1.3 版本，这个版本已经对 Python 3 完美兼容，去他们的网站看看更多的更新内容吧。
 
 Django 之旅
 ^^^^^^^^^^^
@@ -90,7 +90,7 @@ Ajax 与 Django
 
 Seeing that quite a few people have trouble with Ajax and Django, the guys from Bracket have decided to do a write up on how to get things done. Quite long, but good overview on how to get on your way. 
 
-Python 内部研究：调用的工作原理
+Python 内部探究：调用的工作原理
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Eli Bendersky wrote this great article about how callables work in Python 3.3. If you are looking for a deep dive into some of Python’s internals this is definitely worth checking out.
