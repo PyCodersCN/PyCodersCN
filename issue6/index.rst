@@ -80,7 +80,7 @@ Python 魔术方法指南
 这是一篇很翔实的关于 Python 内部探究的文章，建议都读一下这篇文章。
 
 
-:doc:`Reddit 评级算法的工作原理 <how_reddit_ranking_algorithms_work>`
+:doc:`Reddit 评级算法的工作原理 <how-reddit-ranking-algorithms-work>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 想知道 Reddit 的评级算法是如何工作的么，这篇文章很好的解释了它的工作原理，并且还有一个用我们非常喜爱的语言实现的代码样例。
