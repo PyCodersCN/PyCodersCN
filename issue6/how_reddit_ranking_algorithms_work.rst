@@ -1,27 +1,27 @@
-Reddit ÆÀ¼¶Ëã·¨µÄ¹¤×÷Ô­Àí
+Reddit è¯„çº§ç®—æ³•çš„å·¥ä½œåŽŸç†
 ==================================
 
-Ô­ÎÄ£º `<http://eli.thegreenplace.net/2012/03/15/processing-xml-in-python-with-elementtree/>`_
+åŽŸæ–‡ï¼š `<http://eli.thegreenplace.net/2012/03/15/processing-xml-in-python-with-elementtree/>`_
 
-ÒëÕß£º `Tiezhen WANG <https://github.com/wangtz>`_ 
+è¯‘è€…ï¼š `Tiezhen WANG <https://github.com/wangtz>`_ 
 
 .. figure:: http://amix.dk/uploads/reddit.png
    :align: center
    :alt: Reddit Icon
 
-ÕâÆªÊÇ `Hacker News ÆÀ¼¶Ëã·¨µÄ¹¤×÷Ô­Àí <http://amix.dk/blog/post/19574>`_ Ò»ÎÄµÄæ¢ÃÃÆª¡£Õâ»ØÖ÷Òª½²µÄÊÇ `Reddit <http://www.reddit.com/>`_ ÊÇÈçºÎ¶Ô»°ÌâºÍ»Ø¸´½øÐÐÅÅÐòµÄ¡£Reddit µÄÆÀ¼¶Ëã·¨±¾ÉíÊÇ·Ç³£ÈÝÒ×Àí½âºÍÊµÏÖµÄ£¬ÕâÀïÎÒÏë×öÉîÈëÒ»Ð©µÄÌ½ÌÖ¡£
+è¿™ç¯‡æ˜¯ `Hacker News è¯„çº§ç®—æ³•çš„å·¥ä½œåŽŸç† <http://amix.dk/blog/post/19574>`_ ä¸€æ–‡çš„å§Šå¦¹ç¯‡ã€‚è¿™å›žä¸»è¦è®²çš„æ˜¯ `Reddit <http://www.reddit.com/>`_ æ˜¯å¦‚ä½•å¯¹è¯é¢˜å’Œå›žå¤è¿›è¡ŒæŽ’åºçš„ã€‚Reddit çš„è¯„çº§ç®—æ³•æœ¬èº«æ˜¯éžå¸¸å®¹æ˜“ç†è§£å’Œå®žçŽ°çš„ï¼Œè¿™é‡Œæˆ‘æƒ³åšæ·±å…¥ä¸€äº›çš„æŽ¢è®¨ã€‚
 
-µÚÒ»²¿·ÖÖ÷ÒªÊÇ¶Ô»°ÌâÅÅÃûµÄÌÖÂÛ£¬±ÈÈç Reddit ÊÇÈçºÎ¶Ô»°Ìâ½øÐÐÅÅÃûµÄ¡£½ÓÏÂÀ´ÊÇÆÀÂÛÅÅÃûµÄÌÖÂÛ£¬Reddit ¶Ô»°ÌâºÍÆÀÂÛÊ¹ÓÃÁË²»Í¬µÄÆÀ¼¶Ëã·¨ (ÕâÒ»µã¸ú
-`Hacker News <http://news.ycombinator.com/>`_ ²»Ì«Ò»Ñù), Reddit µÄÆÀÂÛÅÅÃûËã·¨ÊÇºÜÖµµÃÍæÎ¶µÄ£¬ËüÓÉ Randall
-Munroe (`xkcd <http://xkcd.com/>`_ µÄ×÷Õß) Ìá³ö.
+ç¬¬ä¸€éƒ¨åˆ†ä¸»è¦æ˜¯å¯¹è¯é¢˜æŽ’åçš„è®¨è®ºï¼Œæ¯”å¦‚ Reddit æ˜¯å¦‚ä½•å¯¹è¯é¢˜è¿›è¡ŒæŽ’åçš„ã€‚æŽ¥ä¸‹æ¥æ˜¯è¯„è®ºæŽ’åçš„è®¨è®ºï¼ŒReddit å¯¹è¯é¢˜å’Œè¯„è®ºä½¿ç”¨äº†ä¸åŒçš„è¯„çº§ç®—æ³• (è¿™ä¸€ç‚¹è·Ÿ
+`Hacker News <http://news.ycombinator.com/>`_ ä¸å¤ªä¸€æ ·), Reddit çš„è¯„è®ºæŽ’åç®—æ³•æ˜¯å¾ˆå€¼å¾—çŽ©å‘³çš„ï¼Œå®ƒç”± Randall
+Munroe (`xkcd <http://xkcd.com/>`_ çš„ä½œè€…) æå‡º.
 
-´Ó»°ÌâÅÅÃûËã·¨µÄÊµÏÖËµ¿ªÀ´
+ä»Žè¯é¢˜æŽ’åç®—æ³•çš„å®žçŽ°è¯´å¼€æ¥
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Reddit ¹«¿ªÁËËûÃÇµÄ´úÂë£¬ºÜ·½±ã¾ÍÄÜÕÒµ½¡£Reddit ÊÇÓÃ Python ÊµÏÖµÄ£¬Ô´´úÂëÔÚ `ÕâÀï <http://code.reddit.com/>`_. ÅÅÃûËã·¨Ê¹ÓÃÁË
-`Pyrex <http://www.cosc.canterbury.ac.nz/greg.ewing/python/Pyrex/>`_ (Ò»¸öÓÃÀ´Ð´ Python µÄ C À©Õ¹µÄÓïÑÔ) À´Ìá¸ßÐÔÄÜ¡£ÕâÀïÎªÁË·½±ãËµÃ÷£¬ÎÒÓÃ Python Ð´ÁË `ËûÃÇµÄ Pyrex ´úÂë <http://code.reddit.com/browser/r2/r2/lib/db/_sorts.pyx>`_.
+Reddit å…¬å¼€äº†ä»–ä»¬çš„ä»£ç ï¼Œå¾ˆæ–¹ä¾¿å°±èƒ½æ‰¾åˆ°ã€‚Reddit æ˜¯ç”¨ Python å®žçŽ°çš„ï¼Œæºä»£ç åœ¨ `è¿™é‡Œ <http://code.reddit.com/>`_. æŽ’åç®—æ³•ä½¿ç”¨äº†
+`Pyrex <http://www.cosc.canterbury.ac.nz/greg.ewing/python/Pyrex/>`_ (ä¸€ä¸ªç”¨æ¥å†™ Python çš„ C æ‰©å±•çš„è¯­è¨€) æ¥æé«˜æ€§èƒ½ã€‚è¿™é‡Œä¸ºäº†æ–¹ä¾¿è¯´æ˜Žï¼Œæˆ‘ç”¨ Python å†™äº† `ä»–ä»¬çš„ Pyrex ä»£ç  <http://code.reddit.com/browser/r2/r2/lib/db/_sorts.pyx>`_.
 
-Õâ¸öËã·¨±»³Æ×÷ÈÈÅÅÃû (hot ranking),´úÂëÈçÏÂ:
+è¿™ä¸ªç®—æ³•è¢«ç§°ä½œçƒ­æŽ’å (hot ranking),ä»£ç å¦‚ä¸‹:
 
 ::
 
@@ -48,84 +48,84 @@ Reddit ¹«¿ªÁËËûÃÇµÄ´úÂë£¬ºÜ·½±ã¾ÍÄÜÕÒµ½¡£Reddit ÊÇÓÃ Python ÊµÏÖµÄ£¬Ô´´úÂëÔÚ `Õâ
         seconds = epoch_seconds(date) - 1134028003
         return round(order + sign * seconds / 45000, 7)
 
-Ò»ÏÂÊÇÓÃÊýÑ§ÓïÑÔ¶Ô¸ÃËã·¨µÄÃèÊö (ÎÒÊÇÔÚ `SEOmoz <http://www.seomoz.org/blog/reddit-stumbleupon-delicious-and-hacker-news-algorithms-exposed>`_ ¿´µ½Õâ¸öÃèÊöµÄ£¬µ«ÊÇ²»È·¶¨ÕâÊÇ·ñÊÇËûÃÇÔ­´´µÄ):
+ä¸€ä¸‹æ˜¯ç”¨æ•°å­¦è¯­è¨€å¯¹è¯¥ç®—æ³•çš„æè¿° (æˆ‘æ˜¯åœ¨ `SEOmoz <http://www.seomoz.org/blog/reddit-stumbleupon-delicious-and-hacker-news-algorithms-exposed>`_ çœ‹åˆ°è¿™ä¸ªæè¿°çš„ï¼Œä½†æ˜¯ä¸ç¡®å®šè¿™æ˜¯å¦æ˜¯ä»–ä»¬åŽŸåˆ›çš„):
 
 .. figure:: http://amix.dk/uploads/reddit_cf_algorithm.png
    :align: center
-   :alt: Reddit Ê¹ÓÃµÄËã·¨
+   :alt: Reddit ä½¿ç”¨çš„ç®—æ³•
 
-·¢±íÊ±¼äµÄÓ°Ïì
+å‘è¡¨æ—¶é—´çš„å½±å“
 ~~~~~~~~~~~~~~
 
-·¢±íÊ±¼äºÍ»°ÌâÅÅÃûµÄÓ°Ïì¿ÉÒÔ±»¸ÅÀ¨ÈçÏÂ:
+å‘è¡¨æ—¶é—´å’Œè¯é¢˜æŽ’åçš„å½±å“å¯ä»¥è¢«æ¦‚æ‹¬å¦‚ä¸‹:
 
--  ·¢±íÊ±¼ä¶ÔÅÅÃûÓÐºÜ´óÓ°Ïì£¬¸ÃËã·¨Ê¹µÃÐÂµÄ»°Ìâ±È¾ÉµÄ»°ÌâÅÅÃû¿¿Ç°
--  »°ÌâµÄµÃ·Ö²»»áÒòÎªÊ±¼äµÄÁ÷Ê§¶ø¼õÉÙ£¬µ«ÊÇÐÂµÄ»°Ìâ»á±È¾ÉµÄ»°ÌâµÃ·Ö¸ß¡£ÕâÓë Hacker New µÄËã·¨²»Í¬ (Ëæ×ÅÊ±¼äµÄ·¢Õ¹½µµÍ»°ÌâµÄµÃ·Ö)
+-  å‘è¡¨æ—¶é—´å¯¹æŽ’åæœ‰å¾ˆå¤§å½±å“ï¼Œè¯¥ç®—æ³•ä½¿å¾—æ–°çš„è¯é¢˜æ¯”æ—§çš„è¯é¢˜æŽ’åé å‰
+-  è¯é¢˜çš„å¾—åˆ†ä¸ä¼šå› ä¸ºæ—¶é—´çš„æµå¤±è€Œå‡å°‘ï¼Œä½†æ˜¯æ–°çš„è¯é¢˜ä¼šæ¯”æ—§çš„è¯é¢˜å¾—åˆ†é«˜ã€‚è¿™ä¸Ž Hacker New çš„ç®—æ³•ä¸åŒ (éšç€æ—¶é—´çš„å‘å±•é™ä½Žè¯é¢˜çš„å¾—åˆ†)
 
-ÏÂÍ¼Õ¹Ê¾ÁË»°ÌâµÃ·ÖÔÚºÃÆÀºÍ²îÆÀµÄÊýÁ¿²»±äÊ±£¬Ëæ×ÅÊ±¼ä¶ø±ä»¯µÄÇé¿ö£º
+ä¸‹å›¾å±•ç¤ºäº†è¯é¢˜å¾—åˆ†åœ¨å¥½è¯„å’Œå·®è¯„çš„æ•°é‡ä¸å˜æ—¶ï¼Œéšç€æ—¶é—´è€Œå˜åŒ–çš„æƒ…å†µï¼š
 
 .. figure:: http://amix.dk/uploads/reddit_score_time.png
    :align: center
-   :alt: Reddit µÄ»°ÌâµÃ·Ö
+   :alt: Reddit çš„è¯é¢˜å¾—åˆ†
 
-¶ÔÊý¹ØÏµ
+å¯¹æ•°å…³ç³»
 ~~~~~~~~
 
-Reddit µÄÈÈÅÅÐòËã·¨Ê¹ÓÃÁË¶ÔÊýº¯ÊýÀ´ºâÁ¿Ç°ÃæµÄÍ¶Æ±ÓëÆäËûÍ¶Æ±µÄ²î¾à£º
+Reddit çš„çƒ­æŽ’åºç®—æ³•ä½¿ç”¨äº†å¯¹æ•°å‡½æ•°æ¥è¡¡é‡å‰é¢çš„æŠ•ç¥¨ä¸Žå…¶ä»–æŠ•ç¥¨çš„å·®è·ï¼š
 
--  Ç°Ê®¸öºÃÆÀºÍÖ®ºóµÄ100¸ö£¬1000¸öÍ¶Æ±ÓÐÏàÍ¬µÄÈ¨ÖØ¡£
+-  å‰åä¸ªå¥½è¯„å’Œä¹‹åŽçš„100ä¸ªï¼Œ1000ä¸ªæŠ•ç¥¨æœ‰ç›¸åŒçš„æƒé‡ã€‚
 
-²Î¼ûÏÂÃæµÄÍ¼:
+å‚è§ä¸‹é¢çš„å›¾:
 
 .. figure:: http://amix.dk/uploads/reddit_log_function.png
    :align: center
-   :alt: ¶ÔÊýº¯Êý²úÉúµÄÓ°Ïì
+   :alt: å¯¹æ•°å‡½æ•°äº§ç”Ÿçš„å½±å“
 
-È¥µô¶ÔÊýº¯ÊýÖ®ºó£¨Òë×¢£º²ÉÓÃÏßÐÔº¯Êý£©µÄÐ§¹û
+åŽ»æŽ‰å¯¹æ•°å‡½æ•°ä¹‹åŽï¼ˆè¯‘æ³¨ï¼šé‡‡ç”¨çº¿æ€§å‡½æ•°ï¼‰çš„æ•ˆæžœ
 
 .. figure:: http://amix.dk/uploads/reddit_without_log.png
    :align: center
-   :alt: Èç¹ûÃ»ÓÐ¶ÔÊýº¯Êý
+   :alt: å¦‚æžœæ²¡æœ‰å¯¹æ•°å‡½æ•°
 
-·´¶ÔÆ±µÄÓ°Ïì
+åå¯¹ç¥¨çš„å½±å“
 ~~~~~~~~~~~~~~~~~~~~
 
-Reddit ÊÇÎªÊý²»¶àµÄ¼¸¸ö¿ÉÒÔÍ¶·´¶ÔÆ±µÄÍøÕ¾¡£ÕýÈçÉÏ±ß´úÂëËùÊö£¬Ò»¸ö»°ÌâµÄµÃ·Ö±»¶¨Òå³É£ººÃÆÀÊý - ²îÆÀÊý
+Reddit æ˜¯ä¸ºæ•°ä¸å¤šçš„å‡ ä¸ªå¯ä»¥æŠ•åå¯¹ç¥¨çš„ç½‘ç«™ã€‚æ­£å¦‚ä¸Šè¾¹ä»£ç æ‰€è¿°ï¼Œä¸€ä¸ªè¯é¢˜çš„å¾—åˆ†è¢«å®šä¹‰æˆï¼šå¥½è¯„æ•° - å·®è¯„æ•°
 
-ÏÂ±ßµÄÍ¼¿ÉÒÔ°ïÖúÎÒÃÇÀí½â£º
+ä¸‹è¾¹çš„å›¾å¯ä»¥å¸®åŠ©æˆ‘ä»¬ç†è§£ï¼š
 
 .. figure:: http://amix.dk/uploads/reddit_up_down.png
    :align: center
-   :alt: ²îÆÀµÄÓ°Ïì
+   :alt: å·®è¯„çš„å½±å“
 
-ÕâÒ»µã¶ÔÄÇÐ©Í¬Ê±ÓÐ´óÁ¿ÔÞ³ÉºÍ·´¶ÔÆ±µÄ»°Ìâ£¨±ÈÈçËµÒ»Ð©ÓÐÕùÒéµÄ»°Ìâ£©ÓÐÏÔÖøÓ°Ïì¡£ÕâÖÖ»°ÌâµÄÅÅÃû»á±ÈÖ»ÓÐÔÞ³ÉÆ±µÄ»°ÌâµÍÒ»Ð©£¬ÕâÒ²¾Í½âÊÍÁËÎªÊ²Ã´ kittens ºÍÆäËûÒ»Ð©Ã»ÓÐÕùÒéµÄ»°ÌâÅÅÃûÈç´Ë¿¿Ç°¡£
+è¿™ä¸€ç‚¹å¯¹é‚£äº›åŒæ—¶æœ‰å¤§é‡èµžæˆå’Œåå¯¹ç¥¨çš„è¯é¢˜ï¼ˆæ¯”å¦‚è¯´ä¸€äº›æœ‰äº‰è®®çš„è¯é¢˜ï¼‰æœ‰æ˜¾è‘—å½±å“ã€‚è¿™ç§è¯é¢˜çš„æŽ’åä¼šæ¯”åªæœ‰èµžæˆç¥¨çš„è¯é¢˜ä½Žä¸€äº›ï¼Œè¿™ä¹Ÿå°±è§£é‡Šäº†ä¸ºä»€ä¹ˆ kittens å’Œå…¶ä»–ä¸€äº›æ²¡æœ‰äº‰è®®çš„è¯é¢˜æŽ’åå¦‚æ­¤é å‰ã€‚
 
-»°ÌâÅÅÃûËã·¨µÄ½áÂÛ
+è¯é¢˜æŽ’åç®—æ³•çš„ç»“è®º
 ~~~~~~~~~~~~~~~~~~
 
--  ·¢±íÊ±¼äÊÇÒ»¸ö·Ç³£ÖØÒªµÄ²ÎÊý£¬Í¨³££¬ÐÂµÄ»°ÌâÒª±È¾ÉµÄ»°ÌâÅÅÃû¿¿Ç°
--  Ç°10¸öºÃÆÀ¸ú½ÓÏÂÀ´µÄ100¸öÓÐ×ÅÍ¬ÑùµÄÈ¨ÖØ¡£±ÈÈçÒ»¸öÓÐ×Å10¸öºÃÆÀµÄ»°Ìâ£¬¸úÓÐ50¸öºÃÆÀµÄ»°ÌâÓÐ×ÅÏàËÆµÄÅÅÃû
--  ÓÐÕùÒéµÄ»°Ìâ£¨Ö§³ÖÆ±ºÍ·´¶ÔÆ±µÄÊýÁ¿Ïà½ü£©Òª±ÈÖ§³ÖÆ±Õ¼´ó¶àÊýµÄ»°ÌâÅÅÃû¿¿ºó
+-  å‘è¡¨æ—¶é—´æ˜¯ä¸€ä¸ªéžå¸¸é‡è¦çš„å‚æ•°ï¼Œé€šå¸¸ï¼Œæ–°çš„è¯é¢˜è¦æ¯”æ—§çš„è¯é¢˜æŽ’åé å‰
+-  å‰10ä¸ªå¥½è¯„è·ŸæŽ¥ä¸‹æ¥çš„100ä¸ªæœ‰ç€åŒæ ·çš„æƒé‡ã€‚æ¯”å¦‚ä¸€ä¸ªæœ‰ç€10ä¸ªå¥½è¯„çš„è¯é¢˜ï¼Œè·Ÿæœ‰50ä¸ªå¥½è¯„çš„è¯é¢˜æœ‰ç€ç›¸ä¼¼çš„æŽ’å
+-  æœ‰äº‰è®®çš„è¯é¢˜ï¼ˆæ”¯æŒç¥¨å’Œåå¯¹ç¥¨çš„æ•°é‡ç›¸è¿‘ï¼‰è¦æ¯”æ”¯æŒç¥¨å å¤§å¤šæ•°çš„è¯é¢˜æŽ’åé åŽ
 
-ÔÙÀ´Ì¸Ò»ÏÂ Reddit µÄÆÀÂÛÅÅÃûËã·¨
+å†æ¥è°ˆä¸€ä¸‹ Reddit çš„è¯„è®ºæŽ’åç®—æ³•
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Reddit ÆÀÂÛÅÅÃûËã·¨ÊÇÓÉxkcd µÄ `Randall Munroe <http://xkcd.com/>`_ Ìá³öµÄ¡£ËûµÄÕâÆª²©¿ÍÇå³þµØ½âÊÍÁËÅÅÃûËã·¨:
+Reddit è¯„è®ºæŽ’åç®—æ³•æ˜¯ç”±xkcd çš„ `Randall Munroe <http://xkcd.com/>`_ æå‡ºçš„ã€‚ä»–çš„è¿™ç¯‡åšå®¢æ¸…æ¥šåœ°è§£é‡Šäº†æŽ’åç®—æ³•:
 
--  `reddit ÐÂµÄÆÀÂÛÅÅÃûËã·¨ <http://blog.reddit.com/2009/10/reddits-new-comment-sorting-system.html>`_
+-  `reddit æ–°çš„è¯„è®ºæŽ’åç®—æ³• <http://blog.reddit.com/2009/10/reddits-new-comment-sorting-system.html>`_
 
-ÄÚÈÝ¿ÉÒÔ¹éÄÉÈçÏÂ£º
+å†…å®¹å¯ä»¥å½’çº³å¦‚ä¸‹ï¼š
 
--  ÈÈÅÅÃûËã·¨²»ÊÊºÏÓ¦ÓÃÓÚÆÀÂÛ£¬ÒòÎªËü¸üÆ«ÏòÓÚÔçÆÚ·¢±íµÄÆÀÂÛ
--  ÆÀÂÛµÄÆÀ¼¶Ëã·¨Ó¦¸ÃÓë·¢±íÊ±¼äÎÞ¹Ø
--  Edwin B. Wilson ÔÚ1927ÄêÌá³öÁËÒ»¸ö½â¾ö·½°¸£¬½Ð×öÍþ¶ûÑ·µÃ·ÖÇø¼ä (Wilson score interval)£¬Ëü¿ÉÒÔ±»ÓÃÓÚÐÅÐÄÅÅÐò (The confidence sort)
--  ÐÅÐÄÅÅÐò°ÑÍ¶Æ±Êýµ±×÷Ò»¸ö¼ÙÏóµÄ¶ÔËùÓÐÈËÍ¶Æ±Çé¿öµÄ³éÑùÍ³¼Æ£¬ÀàËÆÓÚÒ»¸öÍ¶Æ±Ñ¡¾Ù
--  `ÔõÃ´Ñù±ÜÃâ¸ù¾ÝÍ¶Æ±Æ½¾ùÖµÅÅÐò <http://www.evanmiller.org/how-not-to-sort-by-average-rating.html>`_ ¸ÅÊöÁËÈçºÎ½øÐÐÐÅÐÄÅÅÐò£¬·Ç³£ÍÆ¼öÔÄ¶Á¡£
+-  çƒ­æŽ’åç®—æ³•ä¸é€‚åˆåº”ç”¨äºŽè¯„è®ºï¼Œå› ä¸ºå®ƒæ›´åå‘äºŽæ—©æœŸå‘è¡¨çš„è¯„è®º
+-  è¯„è®ºçš„è¯„çº§ç®—æ³•åº”è¯¥ä¸Žå‘è¡¨æ—¶é—´æ— å…³
+-  Edwin B. Wilson åœ¨1927å¹´æå‡ºäº†ä¸€ä¸ªè§£å†³æ–¹æ¡ˆï¼Œå«åšå¨å°”é€Šå¾—åˆ†åŒºé—´ (Wilson score interval)ï¼Œå®ƒå¯ä»¥è¢«ç”¨äºŽä¿¡å¿ƒæŽ’åº (The confidence sort)
+-  ä¿¡å¿ƒæŽ’åºæŠŠæŠ•ç¥¨æ•°å½“ä½œä¸€ä¸ªå‡è±¡çš„å¯¹æ‰€æœ‰äººæŠ•ç¥¨æƒ…å†µçš„æŠ½æ ·ç»Ÿè®¡ï¼Œç±»ä¼¼äºŽä¸€ä¸ªæŠ•ç¥¨é€‰ä¸¾
+-  `æ€Žä¹ˆæ ·é¿å…æ ¹æ®æŠ•ç¥¨å¹³å‡å€¼æŽ’åº <http://www.evanmiller.org/how-not-to-sort-by-average-rating.html>`_ æ¦‚è¿°äº†å¦‚ä½•è¿›è¡Œä¿¡å¿ƒæŽ’åºï¼Œéžå¸¸æŽ¨èé˜…è¯»ã€‚
 
-ÉîÈëÆÀÂÛÆÀ¼¶´úÂë
+æ·±å…¥è¯„è®ºè¯„çº§ä»£ç 
 ~~~~~~~~~~~~~~~~
 
-`\_sorts.pyx <http://code.reddit.com/browser/r2/r2/lib/db/_sorts.pyx>`_ ÊµÏÖÁËÐÅÐÄÅÅÐòËã·¨¡£ÎÒÒÑ¾­ÓÃ´¿ Python ÖØÐÂÊµÏÖÁËÔ­À´µÄ Pyrex ´úÂë£¬»º´æÓÅ»¯Ïà¹ØµÄ´úÂëÒ²±»Ê¡ÂÔÁË¡£
+`\_sorts.pyx <http://code.reddit.com/browser/r2/r2/lib/db/_sorts.pyx>`_ å®žçŽ°äº†ä¿¡å¿ƒæŽ’åºç®—æ³•ã€‚æˆ‘å·²ç»ç”¨çº¯ Python é‡æ–°å®žçŽ°äº†åŽŸæ¥çš„ Pyrex ä»£ç ï¼Œç¼“å­˜ä¼˜åŒ–ç›¸å…³çš„ä»£ç ä¹Ÿè¢«çœç•¥äº†ã€‚
 
 ::
 
@@ -149,75 +149,75 @@ Reddit ÆÀÂÛÅÅÃûËã·¨ÊÇÓÉxkcd µÄ `Randall Munroe <http://xkcd.com/>`_ Ìá³öµÄ¡£ËûµÄ
         else:
             return _confidence(ups, downs)
 
-ÐÅÐÄÅÅÐòÊ¹ÓÃÁË `Íþ¶ûÑ·µÃ·ÖÇø¼ä <http://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Wilson_score_interval>`_
-ÊýÑ§¼Ç·¨ÈçÏÂ£º
+ä¿¡å¿ƒæŽ’åºä½¿ç”¨äº† `å¨å°”é€Šå¾—åˆ†åŒºé—´ <http://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Wilson_score_interval>`_
+æ•°å­¦è®°æ³•å¦‚ä¸‹ï¼š
 
 .. figure:: http://amix.dk/uploads/wilsons_score_interval.png
    :align: center
-   :alt: Íþ¶ûÑ·µÃ·ÖÇø¼ä
+   :alt: å¨å°”é€Šå¾—åˆ†åŒºé—´
 
-¹«Ê½ÖÐ²ÎÊýÒâÒåÈçÏÂ£º
+å…¬å¼ä¸­å‚æ•°æ„ä¹‰å¦‚ä¸‹ï¼š
 
--  p ÊÇ¹Û²ìµ½µÄÖ§³ÖÆ±ËùÕ¼°Ù·Ö±È
--  n ÊÇ×ÜÍ¶Æ±Êý
--  z\ :sub:`¦Á/2`\ ÊÇ (1-¦Á/2) Î»ÊýµÄ±ê×¼ÕýÌ¬·Ö²¼
+-  p æ˜¯è§‚å¯Ÿåˆ°çš„æ”¯æŒç¥¨æ‰€å ç™¾åˆ†æ¯”
+-  n æ˜¯æ€»æŠ•ç¥¨æ•°
+-  z\ :sub:`Î±/2`\ æ˜¯ (1-Î±/2) ä½æ•°çš„æ ‡å‡†æ­£æ€åˆ†å¸ƒ
 
-ÎÒÃÇ°ÑÉÏ±ßµÄÌÖÂÛ×Ü½áÈçÏÂ£º
+æˆ‘ä»¬æŠŠä¸Šè¾¹çš„è®¨è®ºæ€»ç»“å¦‚ä¸‹ï¼š
 
--  ÐÅÐÄÅÅÐò°ÑÍ¶Æ±Êýµ±×÷Ò»¸ö¼ÙÏóµÄ¶ÔËùÓÐÈËÍ¶Æ±Çé¿öµÄ³éÑùÍ³¼Æ£¬ÀàËÆÓÚÒ»¸öÍ¶Æ±Ñ¡¾Ù
--  ÐÅÐÄÅÅÐò¸ø³öµÄÅÅÃûÓÐ 85% µÄ¿ÉÐÅ¶È
--  Í¶Æ±ÊýÔ½¶à£¬85%µÄÐÅÏ¢µÃ·ÖÔ½½Ó½üÓÚÕæÊµµÃ·Ö
--  Íþ¶ûÑ·µÃ·ÖÇø¼ä¶ÔÐ¡ÊýÁ¿µÄ³¢ÊÔºÍ¼«¶ËµÄ¸ÅÂÊÓÐ×ÅºÜºÃµÄÌØÐÔ  (?)
+-  ä¿¡å¿ƒæŽ’åºæŠŠæŠ•ç¥¨æ•°å½“ä½œä¸€ä¸ªå‡è±¡çš„å¯¹æ‰€æœ‰äººæŠ•ç¥¨æƒ…å†µçš„æŠ½æ ·ç»Ÿè®¡ï¼Œç±»ä¼¼äºŽä¸€ä¸ªæŠ•ç¥¨é€‰ä¸¾
+-  ä¿¡å¿ƒæŽ’åºç»™å‡ºçš„æŽ’åæœ‰ 85% çš„å¯ä¿¡åº¦
+-  æŠ•ç¥¨æ•°è¶Šå¤šï¼Œ85%çš„ä¿¡æ¯å¾—åˆ†è¶ŠæŽ¥è¿‘äºŽçœŸå®žå¾—åˆ†
+-  å¨å°”é€Šå¾—åˆ†åŒºé—´å¯¹å°æ•°é‡çš„å°è¯•å’Œæžç«¯çš„æ¦‚çŽ‡æœ‰ç€å¾ˆå¥½çš„ç‰¹æ€§  (?)
 
-Randall `ÔÚËûµÄÒ»Æª²©¿ÍÀï <http://blog.reddit.com/2009/10/reddits-new-comment-sorting-system.html>`_ ÓÐÒ»¸öºÜºÃµÄÀý×Ó½âÊÍÁËÐÅÐÄÅÅÐòÊÇÈçºÎ¸øÆÀÂÛ×÷ÅÅÃûµÄ£º
+Randall `åœ¨ä»–çš„ä¸€ç¯‡åšå®¢é‡Œ <http://blog.reddit.com/2009/10/reddits-new-comment-sorting-system.html>`_ æœ‰ä¸€ä¸ªå¾ˆå¥½çš„ä¾‹å­è§£é‡Šäº†ä¿¡å¿ƒæŽ’åºæ˜¯å¦‚ä½•ç»™è¯„è®ºä½œæŽ’åçš„ï¼š
 
-    Èç¹ûÒ»¸öÆÀÂÛÓÐ1¸öºÃÆÀ£¬Ã»ÓÐ²îÆÀ£¬ËüµÄÖ§³ÖÂÊÊÇ100%£¬µ«ÊÇÓÉÓÚÊý¾ÝÁ¿¹ýÐ¡£¬ÏµÍ³»¹ÊÇ»á°ÑËü·Åµ½µ×²¿¡£ µ«Èç¹û£¬ËüÓÐ10¸öºÃÆÀ£¬1¸ö²îÆÀ£¬ÏµÍ³¿ÉÄÜ»áÓÐ×ã¹»µÄÐÅÏ¢°ÑËû·Åµ½Ò»¸öÓÐ×Å40¸öºÃÆÀ£¬20¸ö²îÆÀµÄÆÀÂÛÖ®Ç°¡£ÒòÎªÎÒÃÇ»ù±¾È·ÈÏµ±ËüÓÐÁË40¸öºÃÆÀµÄÊ±ºò£¬ËüÊÕµ½µÄ²îÆÀ»áÉÙÓÚ20¸ö¡£×îºÃµÄÒ»µãÊÇ£¬Ò»µ©Õâ¸öËã·¨³ö´íÁË£¨Ëã·¨ÓÐ15%µÄÊ§Ð§¸ÅÂÊ£©£¬Ëü»áºÜ¿ìÄÃµ½¸ü¶àµÄÊý¾Ý£¬ÒòÎªËü±»ÅÅµ½ÁËÇ°Ãæ¡£(?)
+    å¦‚æžœä¸€ä¸ªè¯„è®ºæœ‰1ä¸ªå¥½è¯„ï¼Œæ²¡æœ‰å·®è¯„ï¼Œå®ƒçš„æ”¯æŒçŽ‡æ˜¯100%ï¼Œä½†æ˜¯ç”±äºŽæ•°æ®é‡è¿‡å°ï¼Œç³»ç»Ÿè¿˜æ˜¯ä¼šæŠŠå®ƒæ”¾åˆ°åº•éƒ¨ã€‚ ä½†å¦‚æžœï¼Œå®ƒæœ‰10ä¸ªå¥½è¯„ï¼Œ1ä¸ªå·®è¯„ï¼Œç³»ç»Ÿå¯èƒ½ä¼šæœ‰è¶³å¤Ÿçš„ä¿¡æ¯æŠŠä»–æ”¾åˆ°ä¸€ä¸ªæœ‰ç€40ä¸ªå¥½è¯„ï¼Œ20ä¸ªå·®è¯„çš„è¯„è®ºä¹‹å‰ã€‚å› ä¸ºæˆ‘ä»¬åŸºæœ¬ç¡®è®¤å½“å®ƒæœ‰äº†40ä¸ªå¥½è¯„çš„æ—¶å€™ï¼Œå®ƒæ”¶åˆ°çš„å·®è¯„ä¼šå°‘äºŽ20ä¸ªã€‚æœ€å¥½çš„ä¸€ç‚¹æ˜¯ï¼Œä¸€æ—¦è¿™ä¸ªç®—æ³•å‡ºé”™äº†ï¼ˆç®—æ³•æœ‰15%çš„å¤±æ•ˆæ¦‚çŽ‡ï¼‰ï¼Œå®ƒä¼šå¾ˆå¿«æ‹¿åˆ°æ›´å¤šçš„æ•°æ®ï¼Œå› ä¸ºå®ƒè¢«æŽ’åˆ°äº†å‰é¢ã€‚(?)
 
-·¢±íÊ±¼äµÄÓ°Ïì£ºÒ»µã¶ù¶¼Ã»ÓÐ
+å‘è¡¨æ—¶é—´çš„å½±å“ï¼šä¸€ç‚¹å„¿éƒ½æ²¡æœ‰
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-ÐÅÐÄÅÅÐòµÄÓÐµãÔÚÓÚËü¸ú·¢±íÊ±¼äÎÞ¹Ø (ÓëÈÈÅÅÃûºÍ Hacker New µÄÅÅÐò²»Í¬)¡£ÆÀÂÛÊÇÍ¨¹ýÐÅÐÄºÍÊý¾Ý²ÉÑùÀ´ÆÀ¼¶µÄ¡£±ÈÈç£¬Í¶Æ±ÊýÔ½¶à£¬µÃ·ÖÒ²¾ÍÔ½×¼È·¡£
+ä¿¡å¿ƒæŽ’åºçš„æœ‰ç‚¹åœ¨äºŽå®ƒè·Ÿå‘è¡¨æ—¶é—´æ— å…³ (ä¸Žçƒ­æŽ’åå’Œ Hacker New çš„æŽ’åºä¸åŒ)ã€‚è¯„è®ºæ˜¯é€šè¿‡ä¿¡å¿ƒå’Œæ•°æ®é‡‡æ ·æ¥è¯„çº§çš„ã€‚æ¯”å¦‚ï¼ŒæŠ•ç¥¨æ•°è¶Šå¤šï¼Œå¾—åˆ†ä¹Ÿå°±è¶Šå‡†ç¡®ã€‚
 
-¿ÉÊÓ»¯
+å¯è§†åŒ–
 ~~~~~~
 
-ÏÖÔÚÎÒÃÇÀ´Í¨¹ýÍ¼±í¿´Ò»ÏÂÐÅÐÄÅÅÐòÊÇÈçºÎ¶ÔÆÀÂÛÅÅÃûµÄ¡£ÎÒÃÇ¿ÉÒÔ½èÓÃ Randall ¸ø³öµÄÀý×Ó:
+çŽ°åœ¨æˆ‘ä»¬æ¥é€šè¿‡å›¾è¡¨çœ‹ä¸€ä¸‹ä¿¡å¿ƒæŽ’åºæ˜¯å¦‚ä½•å¯¹è¯„è®ºæŽ’åçš„ã€‚æˆ‘ä»¬å¯ä»¥å€Ÿç”¨ Randall ç»™å‡ºçš„ä¾‹å­:
 
 .. figure:: http://amix.dk/uploads/reddit_confidence_sort.png
    :align: center
-   :alt: Reddit µÄÐÅÐÄÅÅÐò
+   :alt: Reddit çš„ä¿¡å¿ƒæŽ’åº
 
-ÕýÈçÄã¿´µ½µÄ£¬ÐÅÐÄÅÅÐò²¢²»¹ØÐÄÒ»¸öÆÀÂÛµÄÍ¶Æ±Êý£¬¶ø¹ØÐÄºÃÆÀÊýºÍÍ¶Æ±×ÜÊý»ò²ÉÑù´óÐ¡µÄÏà¶Ô¹ØÏµ£¡
+æ­£å¦‚ä½ çœ‹åˆ°çš„ï¼Œä¿¡å¿ƒæŽ’åºå¹¶ä¸å…³å¿ƒä¸€ä¸ªè¯„è®ºçš„æŠ•ç¥¨æ•°ï¼Œè€Œå…³å¿ƒå¥½è¯„æ•°å’ŒæŠ•ç¥¨æ€»æ•°æˆ–é‡‡æ ·å¤§å°çš„ç›¸å¯¹å…³ç³»ï¼
 
-ÅÅÃûÖ®ÍâµÄÓ¦ÓÃ
+æŽ’åä¹‹å¤–çš„åº”ç”¨
 ~~~~~~~~~~~~~~
 
-ÕýÈç `Evan
+æ­£å¦‚ `Evan
 Miller <http://www.evanmiller.org/how-not-to-sort-by-average-rating.html>`_
-ËùËµ£¬Íþ¶ûÑ·µÃ·ÖÇø¼ä²»½ö½öÓÃÓÚÅÅÃû£¬Ëû¾ÙÁË3¸öÀý×Ó£º
+æ‰€è¯´ï¼Œå¨å°”é€Šå¾—åˆ†åŒºé—´ä¸ä»…ä»…ç”¨äºŽæŽ’åï¼Œä»–ä¸¾äº†3ä¸ªä¾‹å­ï¼š
 
--  À¬»øÓÊ¼þ¼ì²â£º¿´µ½Õâ¸öÄÚÈÝ²¢½«Ëü±ê¼Ç³ÉÀ¬»øÓÊ¼þµÄ°Ù·Ö±ÈÓÐ¶àÉÙ£¿
--  ´´½¨¾«»ªÁÐ±í£º¿´µ½Õâ¸öÄÚÈÝ²¢½«Ëü¼ÓÐÇ±ê¼þµÄ°Ù·Ö±ÈÓÐ¶àÉÙ£¿
--  ´´½¨×îÊÜ»¶Ó¦ÁÐ±í£º¿´µ½Õâ¸öÄÚÈÝ²¢½«Ëü×ª·¢¸øÅóÓÑµÄ°Ù·Ö±ÈÓÐ¶àÉÙ£¿
+-  åžƒåœ¾é‚®ä»¶æ£€æµ‹ï¼šçœ‹åˆ°è¿™ä¸ªå†…å®¹å¹¶å°†å®ƒæ ‡è®°æˆåžƒåœ¾é‚®ä»¶çš„ç™¾åˆ†æ¯”æœ‰å¤šå°‘ï¼Ÿ
+-  åˆ›å»ºç²¾åŽåˆ—è¡¨ï¼šçœ‹åˆ°è¿™ä¸ªå†…å®¹å¹¶å°†å®ƒåŠ æ˜Ÿæ ‡ä»¶çš„ç™¾åˆ†æ¯”æœ‰å¤šå°‘ï¼Ÿ
+-  åˆ›å»ºæœ€å—æ¬¢åº”åˆ—è¡¨ï¼šçœ‹åˆ°è¿™ä¸ªå†…å®¹å¹¶å°†å®ƒè½¬å‘ç»™æœ‹å‹çš„ç™¾åˆ†æ¯”æœ‰å¤šå°‘ï¼Ÿ
 
-Ê¹ÓÃÕâ¸öËã·¨£¬Ö»ÒªÖªµÀÁ½µã£º
+ä½¿ç”¨è¿™ä¸ªç®—æ³•ï¼Œåªè¦çŸ¥é“ä¸¤ç‚¹ï¼š
 
--  Í¶Æ±µÄ×ÜÊý
--  Í¶ÔÞ³ÉÆ±µÄÊýÁ¿
+-  æŠ•ç¥¨çš„æ€»æ•°
+-  æŠ•èµžæˆç¥¨çš„æ•°é‡
 
-ÖªµÀÁËÕâ¸öËã·¨µÄÍþÁ¦ºÍÒ×ÓÃÐÔÖ®ºó£¬ÔÙÏëµ½´ó²¿·ÖÍøÕ¾ÈÔÔÚÊ¹ÓÃ×îÆÓËØµÄÆÀ¼¶·½·¨¾Í»á¾õµÃºÜ³Ô¾ª¡£¼´Ê¹ÊÇ¼¸Ê®ÒÚÃÀÔªµÄ´ó¹«Ë¾£¬ÖîÈçÑÇÂíÑ· `Amazon.com <http://amazon.com/>`_ µÄÆÀ¼¶¹«Ê½Ò²ÊÇºÜ¼òµ¥£º
-Æ½¾ùµÃ·Ö = ºÃÆÀÊý / Í¶Æ±×ÜÊý¡£
+çŸ¥é“äº†è¿™ä¸ªç®—æ³•çš„å¨åŠ›å’Œæ˜“ç”¨æ€§ä¹‹åŽï¼Œå†æƒ³åˆ°å¤§éƒ¨åˆ†ç½‘ç«™ä»åœ¨ä½¿ç”¨æœ€æœ´ç´ çš„è¯„çº§æ–¹æ³•å°±ä¼šè§‰å¾—å¾ˆåƒæƒŠã€‚å³ä½¿æ˜¯å‡ åäº¿ç¾Žå…ƒçš„å¤§å…¬å¸ï¼Œè¯¸å¦‚äºšé©¬é€Š `Amazon.com <http://amazon.com/>`_ çš„è¯„çº§å…¬å¼ä¹Ÿæ˜¯å¾ˆç®€å•ï¼š
+å¹³å‡å¾—åˆ† = å¥½è¯„æ•° / æŠ•ç¥¨æ€»æ•°ã€‚
 
-½áÂÛ
+ç»“è®º
 ~~~~
 
-ÎÒÏ£ÍûÕâÆªÎÄÕÂ¶ÔÄãÓÐÓÃ£¬Èç¹ûÓÐÈÎºÎÎÊÌâ»òÊÇ½¨Òé£¬ÇëÁôÏÂÄúµÄ»Ø¸´¡£
+æˆ‘å¸Œæœ›è¿™ç¯‡æ–‡ç« å¯¹ä½ æœ‰ç”¨ï¼Œå¦‚æžœæœ‰ä»»ä½•é—®é¢˜æˆ–æ˜¯å»ºè®®ï¼Œè¯·ç•™ä¸‹æ‚¨çš„å›žå¤ã€‚
 
 Happy hacking as always :)
 
-Ïà¹ØÔÄ¶Á
+ç›¸å…³é˜…è¯»
 ~~~~~~~~
 
--  `Reddit µÄÆÀÂÛÅÅÃûËã·¨ <http://possiblywrong.wordpress.com/2011/06/05/reddits-comment-ranking-algorithm/>`_,
-   ÌÖÂÛÁËRedditÅÅÐòÏµÍ³µÄÒ»¸öbug
+-  `Reddit çš„è¯„è®ºæŽ’åç®—æ³• <http://possiblywrong.wordpress.com/2011/06/05/reddits-comment-ranking-algorithm/>`_,
+   è®¨è®ºäº†RedditæŽ’åºç³»ç»Ÿçš„ä¸€ä¸ªbug
 
