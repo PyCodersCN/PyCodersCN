@@ -100,8 +100,8 @@ Ajax 与 Django
 
 这是一篇对于如何在 DotCloud 上搭建 TurboGears 项目的快速指南，如果你是一个 TurboGears 用户这篇文章或许对你很有用。
 
-:doc:`用 ElementTree 在 Python 中解析 XML <processing-xml-in-python-with-element-tree>`_
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+:doc:`用 ElementTree 在 Python 中解析 XML <processing-xml-in-python-with-element-tree>`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 这也是一篇由 `Eli Bendersky <https://plus.google.com/103282573189025907018>`_ 写的文章，对于 XML 分析处理方面，这篇文章或许会给你带来新的看法，并且还包含了许多例子供你思考。
 
