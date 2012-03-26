@@ -85,8 +85,8 @@ Discoball 是一个通过正则表达式匹配染色的工具，最初是用 Rub
 
 想知道 Reddit 的评级算法是如何工作的么，这篇文章很好的解释了它的工作原理，并且还有一个用我们非常喜爱的语言实现的代码样例。
 
-Ajax 与 Django
-^^^^^^^^^^^^^^
+`Ajax 与 Django <http://brack3t.com/ajax-and-django-views.html>`_
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 看到有很多人在 Ajax 与 Django 的整合中遇到问题， `Bracket <http://brack3t.com/pages/about-us.html>`_ 的一群家伙们决定写以下应该如何完成这件事的文章，稍微有些长，但是确实是一篇不错的介绍。
 
@@ -105,8 +105,8 @@ Ajax 与 Django
 
 这也是一篇由 `Eli Bendersky <https://plus.google.com/103282573189025907018>`_ 写的文章，对于 XML 分析处理方面，这篇文章或许会给你带来新的看法，并且还包含了许多例子供你思考。
 
-自定义 Bash 中 Fabric 任务的自动补全功能
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+`自定义 Bash 中 Fabric 任务的自动补全功能 <http://foobar.lu/wp/2012/03/20/custom-bash-completion-for-fabric-tasks/>`_
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 `Fabric <http://docs.fabfile.org/en/1.4.0/index.html>`_ 是一个对于 Python Hacker 来说非常有用的工具，这里是一个简单的 Bash 自动补全脚本，能够让 Bash 自动补全 Fabric 文件中的命令名字。
 
