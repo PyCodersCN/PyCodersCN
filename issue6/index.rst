@@ -74,8 +74,8 @@ This is very useful if you are starting a brand new Django 1.4 Project. Its a ba
 博文
 ----
 
-Python 魔术方法指南
-^^^^^^^^^^^^^^^^^^^
+:doc:`Python 魔术方法指南 <a-guide-to-pythons-magic-methods>`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 这是一篇很翔实的关于 Python 内部探究的文章，建议都读一下这篇文章。
 
@@ -117,3 +117,4 @@ Ajax 与 Django
     processing-xml-in-python-with-element-tree
     python-internals-how-callables-work
     deploying-a-turbogears-project-to-dotcloud
+    a-guide-to-pythons-magic-methods
