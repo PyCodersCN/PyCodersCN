@@ -109,3 +109,11 @@ Ajax 与 Django
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 `Fabric <http://docs.fabfile.org/en/1.4.0/index.html>`_ 是一个对于 Python Hacker 来说非常有用的工具，这里是一个简单的 Bash 自动补全脚本，能够让 Bash 自动补全 Fabric 文件中的命令名字。
+
+.. toctree::
+    :hidden:
+
+    how_reddit_ranking_algorithms_work
+    processing-xml-in-python-with-element-tree
+    python-internals-how-callables-work
+    deploying-a-turbogears-project-to-dotcloud
