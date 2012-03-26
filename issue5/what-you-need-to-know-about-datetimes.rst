@@ -23,9 +23,11 @@
 瞬间
 ------------------
 - “瞬间是指一个极小时间内的时刻，这个时刻所经历的过程是瞬时的。”
-- http://en.wikipedia.org/wiki/Instant
-- 比如说这个时间：2012-03-10 10:30:00 PST
-- 上面的例子和这个是同一个时间：2012-03-10 13:30:00 EST
+    - http://en.wikipedia.org/wiki/Instant
+- 比如说这个时间：
+    - 2012-03-10 10:30:00 PST
+- 上面的例子和这个是同一个时间：
+    - 2012-03-10 13:30:00 EST
 - 很有趣吧？我们来看看⋯
 
 时间标准
@@ -39,23 +41,23 @@ UT\ :sub:`1`\
 - 完全按照地球的自转来测算。
 - 一秒的长度取决于潮汐，天气，彗星，等等。
 - 地球自转角度 = 2π(0.7790572732640 + 1.00273781191135448T\ :sub:`u`) 弧度
-- http://en.wikipedia.org/wiki/Ut1
+    - http://en.wikipedia.org/wiki/Ut1
 
 TAI
 -----------
 - 国际原子时（International Atomic Time）。
 - 取遍布全球的200台原子钟的平均时间。
 - 原子时的基本单位是原子时秒，定义为：在零磁场下，铯-133原子基态两个超精细能级间跃迁辐射9,192,631,770周所持续的时间。
-- http://en.wikipedia.org/wiki/Caesium_standard
-- `原子时（中文版） <http://zh.wikipedia.org/zh/%E5%8E%9F%E5%AD%90%E6%97%B6>`_
+    - http://en.wikipedia.org/wiki/Caesium_standard
+    - `原子时（中文版） <http://zh.wikipedia.org/zh/%E5%8E%9F%E5%AD%90%E6%97%B6>`_
 - 在确定原子时起点之后，由于地球自转速度不均匀，世界时与原子时之间的时差便逐年积累。
 
 UTC
 -----------
 - 协调世界时，又称世界标准时间或世界协调时间（Coordinated Universal Time）。
 - 以原子时秒长为基础，通常比 UT1 的秒短那么一点儿。
-- 在有需要的情况下会在协调世界时内加上正或负闰秒。
-- 2012-06-30 23:59:60 UTC 是真实存在的！
+    - 在有需要的情况下会在协调世界时内加上正或负闰秒。
+    - 2012-06-30 23:59:60 UTC 是真实存在的！
 - 一种称为协调世界时的折衷时标于1972年面世。
 
 （第10页图）
@@ -64,8 +66,8 @@ POSIX（UNIX）时间戳
 --------------------------
 - 从协调世界时1970年1月1日0时0分0秒起至现在的总秒数。
 - “不包括”闰秒（实际上是有的）。
-- 每天精确86400秒。
-- 有闰秒时会在下一秒叠加。
+    - 每天精确86400秒。
+    - 有闰秒时会在下一秒叠加。
 - 闰年指：
 
 ::
@@ -88,8 +90,8 @@ POSIX（UNIX）时间戳
 - 过去的时候每个城镇都有自己的时钟，按照当地中午时间校准。
 - 所以当时火车晚点很正常，列车上的人也不知道具体是几点！
 - 世界上第一次引入时区的概念是在1847年12月1号，由大不列颠的岛屿上的铁路使用格林尼治标准时间。
-- http://en.wikipedia.org/wiki/Time_zone
-- `时区（中文版） <http://zh.wikipedia.org/wiki/%E6%97%B6%E5%8C%BA>`_
+    - http://en.wikipedia.org/wiki/Time_zone
+    - `时区（中文版） <http://zh.wikipedia.org/wiki/%E6%97%B6%E5%8C%BA>`_
 
 （第15页图）
 
@@ -106,14 +108,14 @@ GMT != UTC
 最好使用UTC
 -----------------
 - Armin Ronacher 说
-- “永远使用 UTC 或者 UNIX 时间戳。”
-- “不要使用偏移量感知日期时间。”
+    - “永远使用 UTC 或者 UNIX 时间戳。”
+    - “不要使用偏移量感知日期时间。”
 
 关于用户的输入输出
 ---------------------------
 - 用 Armin Ronacher 的话来说就是：
-- “如果你从用户那里得到了本地时间，马上把它转化为 UTC 时间。如果这个转换有歧义的话需要通知用户。”
-- “转换以后整个世界都清静了（然后什么偏移量的都去死吧！）”
+    - “如果你从用户那里得到了本地时间，马上把它转化为 UTC 时间。如果这个转换有歧义的话需要通知用户。”
+    - “转换以后整个世界都清静了（然后什么偏移量的都去死吧！）”
 - From http://lucumr.pocoo.org/2011/7/15/eppur-si-muove/
 
 Python 的一些时间模块
@@ -126,38 +128,38 @@ Python 的一些时间模块
 time
 -----------
 - ``libc`` 接口
-- 考虑一下 ``thread`` 和 ``os.fork``
+    - 考虑一下 ``thread`` 和 ``os.fork``
 - 处理 POSIX 时间戳和 ``struct_time``
 - 设置 ``os.environ["TZ"]`` 以后才有时区支持
 - ``struct_time`` 是隐式的，但有一个 ``is_dst`` 的标志变量（flag）。
-- 给出一个显式的DST（DST-aware）时区，它指明了 DST 有没有生效
-- 有助于消除歧义，比如说 01:30
+    - 给出一个显式的DST（DST-aware）时区，它指明了 DST 有没有生效
+    - 有助于消除歧义，比如说 01:30
 - 用 ``time.time()`` 来得到当前的 POSIX 时间戳。
 - 用 ``time.gmtime(t)`` 来得到一个 ``struct_time`` 
-- 如果 ``(t == None)`` 则是当前的时间，或者提供一个 POSIX 时间戳。
+    - 如果 ``(t == None)`` 则是当前的时间，或者提供一个 POSIX 时间戳。
 
 calendar
 ---------------
 - 和 ``datetimes`` 没什么关联，除了⋯
 - 用 ``calendar.timegm(tuple)`` 来把一个 UTC 的 ``struct_time`` 转化为 POSIX 时间戳。
-- http://bugs.python.org/issue6280 提议把它移到 ``time`` 模块中但是被拒绝了。
+    - http://bugs.python.org/issue6280 提议把它移到 ``time`` 模块中但是被拒绝了。
 
 datetime
 -------------
 - Python 对象，有 ``dates`` , ``times`` , ``intervals`` 和 ``timezones`` 接口。
-- 考虑一下 ``threading`` 和 ``subprocess`` 。
+    - 考虑一下 ``threading`` 和 ``subprocess`` 。
 - 两种形式：
-- 隐式的，没有时区信息。
-- 显式的，有时区信息。（注意这两者的区别！）
-- 不要把它们搞混！
+    - 隐式的，没有时区信息。
+    - 显式的，有时区信息。（注意这两者的区别！）
+    - 不要把它们搞混！
 - 不幸的是，还是有很多麻烦的地方。
 
 datetime - 要做的
 ---------------------
 - 使用 ``pytz``
-- 做一个 `时区信息数据库 <http://zh.wikipedia.org/wiki/%E6%97%B6%E5%8C%BA%E4%BF%A1%E6%81%AF%E6%95%B0%E6%8D%AE%E5%BA%93>`_
-- **很有必要** 使用帮助函数（helper functions）来创建本地的显式的时间。
-- 定期更新 ``pytz`` 来对应时区的改变（包括 DST 的改变）
+    - 做一个 `时区信息数据库 <http://zh.wikipedia.org/wiki/%E6%97%B6%E5%8C%BA%E4%BF%A1%E6%81%AF%E6%95%B0%E6%8D%AE%E5%BA%93>`_
+    - **很有必要** 使用帮助函数（helper functions）来创建本地的显式的时间。
+    - 定期更新 ``pytz`` 来对应时区的改变（包括 DST 的改变）
 - 显式的使用 UTC 来表示时间：
 
 ::
@@ -263,7 +265,7 @@ JavaScript
 - “本地时间是指 JS 被执行的这台电脑的时间。”
 - 你也可以用 POSIX 时间戳：
 
-::
+.. code-block:: javascript
 
     new Date(posixTimestamp * 1000);
     var posixTimestamp = Date.now()/1000;
