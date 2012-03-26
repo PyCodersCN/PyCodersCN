@@ -54,7 +54,7 @@ Discoball 是一个通过正则表达式匹配染色的工具，最初是用 Rub
 `Django 1.4 最好的模板系统 <https://github.com/xenith/django-base-template>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This is very useful if you are starting a brand new Django 1.4 Project. Its a base template for Django 1.4, so basically you run django-admin startproject and specify this as its template and it sets up your django project based on the template. This is based off the work of `Mozilla’s Playdoh <https://github.com/mozilla/playdoh>`_ and even if it doesn’t suit your needs entirely its a good place to start to fork and create your own project template.
+如果你正要开始一个全新的 Django 1.4 项目，这将会对你很有帮助。这是一个 Django 1.4 的基本模板，所以你基本上只需要运行 ``django-admin startproject`` 并且将它指定为项目的模板，你的 Django 项目就会基于这个模板。这个项目是基于 `Mozilla 的 Playdoh <https://github.com/mozilla/playdoh>`_ 的工作。即使它不能完全适合你的需要，这儿也是个好地方让你可以 fork 并创建你自己的项目模板。
 
 `pyprocessing - Python 图形开发的类 Processing 环境 <http://code.google.com/p/pyprocessing/>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
