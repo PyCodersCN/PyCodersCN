@@ -1,4 +1,4 @@
-Unicdoe之痛
+Unicode之痛
 ===========
 
 原文地址： `<http://nedbatchelder.com/text/unipain.html>`_
