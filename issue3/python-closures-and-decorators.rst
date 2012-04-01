@@ -1,5 +1,3 @@
-.. _toctree-directive:
-
 Python 的闭包和装饰器
 =====================
 

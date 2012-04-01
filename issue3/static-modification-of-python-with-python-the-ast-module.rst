@@ -1,5 +1,3 @@
-.. _toctree-directive:
-
 AST 模块：用 Python 修改 Python 代码
 ====================================
 

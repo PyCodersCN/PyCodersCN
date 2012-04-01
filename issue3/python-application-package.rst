@@ -1,5 +1,3 @@
-.. _toctree-directive:
-
 Python应用程序包
 ==========================
 

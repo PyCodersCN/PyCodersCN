@@ -113,7 +113,7 @@ Discoball 是一个通过正则表达式匹配染色的工具，最初是用 Rub
 .. toctree::
     :hidden:
 
-    how_reddit_ranking_algorithms_work
+    how-reddit-ranking-algorithms-work
     processing-xml-in-python-with-element-tree
     python-internals-how-callables-work
     deploying-a-turbogears-project-to-dotcloud

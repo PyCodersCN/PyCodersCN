@@ -26,7 +26,7 @@ CPython 经过两个主要的步骤来执行我们的程序：
 1. Python 源代码被编译为字节码。
 2. 一个虚拟机使用一系列的内置对象和模块来执行这些字节码。
 
-在这一节中，我会粗略地概括一下第一步中如何处理一个调用。我不会深入这些细节，而且他们也不是我想在这篇文章中关注的真正有趣的部分。如果你想了解更多 Python 代码在编译器中经历的流程，可以阅读 `这篇文章 <http://eli.thegreenplace.net/2010/06/30/python-internals-adding-a-new-statement-to-python/`_ 。
+在这一节中，我会粗略地概括一下第一步中如何处理一个调用。我不会深入这些细节，而且他们也不是我想在这篇文章中关注的真正有趣的部分。如果你想了解更多 Python 代码在编译器中经历的流程，可以阅读 `这篇文章 <http://eli.thegreenplace.net/2010/06/30/python-internals-adding-a-new-statement-to-python/>`_ 。
 
 简单地来说，Python 编译器将表达式中的所有类似 ``(参数 …)`` 的结构都识别为一个调用[1]_。这个操作的 AST 节点叫 ``Call`` ，编译器通过 ``Python/compile.c`` 文件中的 ``compiler_call`` 函数来生成 ``Call`` 对应的代码。在大多数情况下会生成 ``CALL_FUNCTION`` 字节码指令。它也有一些变种，例如含有“星号参数”——形如 ``func(a, b, *args)`` ，有一个专门的指令 ``CALL_FUNCTION_VAR`` ，但这些都不是我们文章所关注的，所以就忽略掉好了，它们仅仅是这个主题的一些小变种而已。
 
@@ -115,7 +115,7 @@ CPython 的字节码由 ``Python/ceval.c`` 文件的一个巨大的函数 ``PyEv
 
 在 ``call_function`` 中的第一个特殊情况是：
 
-.. code-block::
+.. code-block:: c
     
     /* Always dispatch PyCFunction first, because these are
        presumed to be the most frequent callable object.
@@ -139,7 +139,7 @@ CPython 的字节码由 ``Python/ceval.c`` 文件的一个巨大的函数 ``PyEv
 
 下面，还有一个对 Python 写的类方法的特殊处理：
 
-.. code-block::
+.. code-block:: c
     
     else {
       if (PyMethod_Check(func) && PyMethod_GET_SELF(func) != NULL) {

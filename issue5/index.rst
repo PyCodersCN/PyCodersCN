@@ -119,3 +119,9 @@ REVSYS 小组为即将到来的 Django 1.4 准备的很酷的作弊条。
 (译者：等着俺慢慢拖吧... )
 
 这是 Larry Hastings 做的一个关于 Cpython 的内部细节的演讲。演讲开始于一个简单的程序，并贯穿着 Cpython 循序渐进。这次演讲的目的主要通过向你展示你所需要了解并且付诸行动的事情，来让你成为 Python 核心开发者。
+
+.. toctree::
+    :hidden:
+
+    unipain
+    what-you-need-to-know-about-datetimes
