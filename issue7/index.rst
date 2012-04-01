@@ -86,7 +86,7 @@ Sentry，一个由 `David Cramer <https://twitter.com/#!/zeeg>`_ 开发的错误
 :doc:`探索 Python 代码对象 <exploring-python-code-objects>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Python code objects are Python objects that are used to represent Python bytecode. This article is a great introduction to code objects and a nice guided tour to getting started with inspecting them to learn more about Python and its internals.
+Python 代码对象是用来表示 Python 字节码的 Python 对象。这篇文章是对代码对象很好的介绍，同时也是一个对于学习检查这些代码对象以及了解更多 Python 和它内部的很好的向导。
 
 `Simple <https://github.com/orf/simple>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
