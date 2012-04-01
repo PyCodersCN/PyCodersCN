@@ -22,7 +22,7 @@ Hi Pythonistas,
 `Heroku 现在支持插件形式的 Sentry 了 <https://addons.heroku.com/sentry>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Sentry，一个由 `David Cramer <https://twitter.com/#!/zeeg>`_ 开发的错误记录工具现在以插件形式在 `Heroku <http://heroku.com/>` 上提供，无需手工搭建及配置，只需启用这个插件就可以了。
+Sentry，一个由 `David Cramer <https://twitter.com/#!/zeeg>`_ 开发的错误记录工具现在以插件形式在 `Heroku <http://heroku.com/>`_ 上提供，无需手工搭建及配置，只需启用这个插件就可以了。
 
 `PyCharm 2.5 公开测试版开放下载 <http://blog.jetbrains.com/pycharm/2012/03/pycharm-2-5-public-beta-available-for-download/>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
