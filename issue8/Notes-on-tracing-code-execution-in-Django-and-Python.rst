@@ -21,7 +21,7 @@
 
 **Django追踪工具** , ``django-trace``
 
-基于 ``sys.settrace`` 以及Django的管理命令行工具，我编写了一个Django管理命令行工具。 https://github.com/saltycrane/django-trace .
+基于 ``sys.settrace`` 以及Django的管理命令，我编写了一个Django命令行管理工具。 https://github.com/saltycrane/django-trace .
 
 安装
 ::
