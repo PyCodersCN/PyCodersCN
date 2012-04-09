@@ -5,6 +5,7 @@
 
 * `CMGS <http://cmgs.me>`_
 * `Dukedyb <http://www.douban.com/people/craigfeng/>`_
+* `Ruici Luo <http://github.com/luoruici>`_
 * `TheLoverZ <http://zhuang13.de>`_
 * `Upsuper <http://upsuper.org/>`_
 * `Wangtz <https://github.com/wangtz>`_
