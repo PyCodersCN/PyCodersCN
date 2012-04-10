@@ -58,8 +58,23 @@ Deferreds Are A Dataflow Abstraction
 相关语句应该写在一起
 --------------------
 
-简洁，重用，测试
+上面说的第2条和第3条的就是这个意思，就是说，相关性的东西应该放在一起。这也是最基本组织方式，
+无论是在厨房还是在代码组织上。
+
+一般来说，当你阅读时，你遇到读不懂的或者不明白的语句和单词时，
+你应该会回过头去看看前面几行到底是说什么。也就是说，如果相关性的事物隔的很远的话，
+你回头去看所要花费的时间也就更多。
+
+简洁，重用，调试
 ----------------
+
+我们写函数是为了改善代码的可读性和可测性，我们也会把大块的函数拆成很多个独立功能的小块的函数。
+同时也些小块的函数又方便了我们构造其它的函数，因为它小，它只关注某一特定功能，
+所以也更方便我们测试。
+
+比如说要构造一个 http 请求，你不会把所有的 socket 调用都写到一个函数吧。
+一个可以很好维护的软件，首先要抽象出它里面可重用可调试的模块，
+所以为何回调机制不能也做到可重用可调试呢？
 
 更好的方法
 ----------
@@ -93,11 +108,42 @@ Deferreds Are A Dataflow Abstraction
 
 **Deferreds as a dataflow abstraction.**
 
+
+::
+
+    getPage(getFirstStyle(parse(getPage("http://example.com")))
+
+::
+
+    d = getPage("http://example.com")
+    d.addCallback(parse)
+    d.addCallback(getFirstStyle)
+    d.addCallback(getPage)
+    d.addCallback(printResult)
+
+
+::
+
+    urls.flowTo(getPage)
+        .flowTo(parse)
+        .flowTo(getFirstStyle)
+        .flowTo(getPage)
+        .flowTo(stdout)
+
+        urls.put("http://example.com")
+        urls.put("http://google.com")
+
+好了，就这样吧。你应该看一下 Storm_ 的 Orc_ 。
+
 本文由 lepture_ 翻译自 `Deferreds Are A Dataflow Abstraction <http://dreid.org/2012/03/30/deferreds-are-a-dataflow-abstraction/>`_
 
 .. _lepture: http://lepture.com
 
 .. _PEP8: http://
+
+.. _Storm: https://github.com/nathanmarz/storm/wiki/Tutorial
+
+.. _Orc: http://orc.csres.utexas.edu/
 
 .. [1] 在程式设计语言中，执行一个除产生结果值的函数程式外的函数程式所引起的任何外部作用，而不是指函数所产生的结果值。
 
