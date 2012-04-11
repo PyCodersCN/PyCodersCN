@@ -1,6 +1,10 @@
 Deferreds Are A Dataflow Abstraction
 ====================================
 
+原文: `Deferreds Are A Dataflow Abstraction <http://dreid.org/2012/03/30/deferreds-are-a-dataflow-abstraction/>`_
+
+翻译: `lepture <http://lepture.com>`_
+
 本文的初衷是回应 Duncan McGreggor 博客所载的 《 `和 Guido 谈回调 <http://oubiwann.blogspot.com/2012/03/conversation-with-guido-about-callbacks.html>`_ 》 一文。
 
 首先，我先给出一个jQuery写法的回调的例子::
@@ -69,8 +73,8 @@ Deferreds Are A Dataflow Abstraction
 ----------------
 
 我们写函数是为了改善代码的可读性和可测性，我们也会把大块的函数拆成很多个独立功能的小块的函数。
-同时也些小块的函数又方便了我们构造其它的函数，因为它小，它只关注某一特定功能，
-所以也更方便我们测试。
+同时这些小块的函数又方便了我们构造其它的函数，因为它小，它只关注某一特定功能，
+所以也更方便我们调试。
 
 比如说要构造一个 http 请求，你不会把所有的 socket 调用都写到一个函数吧。
 一个可以很好维护的软件，首先要抽象出它里面可重用可调试的模块，
@@ -108,10 +112,23 @@ Deferreds Are A Dataflow Abstraction
 
 **Deferreds as a dataflow abstraction.**
 
+.. image:: deferred-process.png
+    :alt: deferred process
+
+
+这是一张非环状的回调数据链。单个的操作运算相较于整体的信息流结构是微不足道的。
+事件的成功结果将会被放到 deferred 回调链中继续执行下一步，如果发生了异常，
+就放到异常处理回调链中。同时异常处理回调链中，当执行正常后，又可将处理交给正常回调链。
+
+一个简单的操作链的例子：
 
 ::
 
     getPage(getFirstStyle(parse(getPage("http://example.com")))
+
+
+上面的例子就是数据流编程。我们前面的例子则不是，因为它的操作集是有副作用的，
+
 
 ::
 
@@ -121,6 +138,11 @@ Deferreds Are A Dataflow Abstraction
     d.addCallback(getPage)
     d.addCallback(printResult)
 
+
+现在这个例子里，一切都是有序的，相关的操作块在一起，同时操作块也做了很好的切割，
+每个小函数都是独立的可测试的单元。
+
+我希望到这里已经阐述清楚了为什么延迟机制要比回调机制好。
 
 ::
 
@@ -133,13 +155,14 @@ Deferreds Are A Dataflow Abstraction
         urls.put("http://example.com")
         urls.put("http://google.com")
 
+
+现在我们已经封装好了这样一套机制，不仅仅只是提供了处理一个返回的机制，
+它甚至可以处理无数个事件。使用这套机制，我们就可以构建实时分布式系统了。
+
 好了，就这样吧。你应该看一下 Storm_ 的 Orc_ 。
 
-本文由 lepture_ 翻译自 `Deferreds Are A Dataflow Abstraction <http://dreid.org/2012/03/30/deferreds-are-a-dataflow-abstraction/>`_
 
-.. _lepture: http://lepture.com
-
-.. _PEP8: http://
+.. _PEP8: http://www.python.org/dev/peps/pep-0008/
 
 .. _Storm: https://github.com/nathanmarz/storm/wiki/Tutorial
 
