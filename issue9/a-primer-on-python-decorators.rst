@@ -32,4 +32,24 @@ Python允许作为程序员的你使用函数完成一些很酷的事情。在Py
    ...      "Recursively (i.e., dreadfully) calculate the nth Fibonacci number."
    ...      return n if n in [0, 1] else fib(n - 2) + fib(n - 1)
 
+我们一般会保存这个计算过程中的中间结果，这样，对于函数调用树中经常出现某个n，当需要计算n对应的结果时，就不需要重复计算了。有多种方式可以做到这点。例如，我们可以将这些中间结果存在一个字典中，当以某个值为参数调用fib函数时，就先到这个字典去查一下其结果是否已经计算出来了。
+
+但这样的话，每次我们想要调用fib函数，都需要重复那段相同的字典检查样板代码。相反，如果让fib函数自己在内部负责存储中间结果，那么在其他代码中调用fib，就非常方便，只要简单地调用它就行了。这样一种技术被称为memoization(注意没有字母r的哦)。
+
+我们可以把这种memoization代码直接放入fib函数，但是Python为我们提供了另外一种更加优雅的选择。因为可以编写修改其他函数的函数，那么我们可以编写一个通用的memoization函数，以一个函数作为参数，并返回这个函数的memoization版本:
+::
+
+    def memoize(fn):
+        stored_results = {}
+
+        def memoized(\*args):
+            try:
+                # try to get the cached result
+                return stored_results[args]
+            except KeyError:
+                # nothing was cached for those args. let's fix that.
+                result = stored_results[args] = fn(*args)
+                return result
+        return memoized
+
 
