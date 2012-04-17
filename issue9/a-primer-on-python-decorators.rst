@@ -17,7 +17,7 @@ Python允许作为程序员的你使用函数完成一些很酷的事情。在Py
     >>> alias(4)
     16
 
-然而，一等函数的真正威力在于你可以把它传给其他函数，或者从其他函数中返回函数。Python的内置函数map利用了这种能力：给map传个函数以及一个列表，它会在列表中每个元素上调用你传给它的那个函数，从而生成一个新的列表。如下所示的例子中应用了上面的那个square函数:
+然而，一等函数的真正威力在于你可以把它传给其他函数，或者从其他函数中返回函数。Python的内置函数map利用了这种能力：给map传个函数以及一个列表，它会以列表中每个元素为参数依次调用你传给它的那个函数，从而生成一个新的列表。如下所示的例子中应用了上面的那个square函数:
 
 ::
 
@@ -136,7 +136,52 @@ Python配备有一些作为装饰器使用的非常有用的函数。例如，Py
     f = Foo()
     f.add_to_my_constant(10)    # => 52
 
-旁注：文档字符串(Docstrings)
-==============================
+旁注：文档字符串
+=================
 
+Python函数可以包含更多的信息，而不仅仅是代码：它们也包含有用的帮助信息，比如函数名称，文档字符串:
+
+::
+
+    >>> def fib(n):
+    ...     "Recursively (i.e., dreadfully) calculate the nth Fibonacci number."
+    ...     return n if n in [0, 1] else fib(n - 2) + fib(n - 1)
+    ...
+    >>> fib.__name__
+    'fib'
+    >>> fib.__doc__
+    'Recursively (i.e., dreadfully) calculate the nth Fibonacci number.'
+
+Python内置函数help输出的就是这些信息。但是，当函数被包装之后，我们看到就是包装器函数的名称和文档字符串了:
+
+::
+
+    >>> fib = memoized(fib)
+    >>> fib.__name__
+    'memoized'
+    >>> fib.__doc__
+
+那样的信息并没有什么用处。幸运的是，Python包含一个名为 ``functools.wraps`` 的助手函数，能够把函数的帮助信息拷贝到其包装器函数:
+
+::
+
+    import functools
+    def memoize(fn):
+        stored_results = {}
+        
+        @functools.wraps(fn)
+        def memoized(*args):
+            # (as before)
+
+        return memoized
+
+使用装饰器帮助你编写装饰器会使很多事情令人非常满意。现在，如果使用更新过的memoize函数重试前面的代码，我们将会看到得到保留的文档:
+
+::
+
+    >>> fib = memoized(fib)
+    >>> fib.__name__
+    'fib'
+    >>> fib.__doc__
+    'Recursively (i.e., dreadfully) calculate the nth Fibonacci number.'
 
