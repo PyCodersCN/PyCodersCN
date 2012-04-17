@@ -8,6 +8,7 @@ Python装饰器入门
 Python允许作为程序员的你使用函数完成一些很酷的事情。在Python中，函数是一等对象(first-class object)，这就意味着你可以像使用字符串，整数，或者任何其他对象一样使用函数。例如，你可以将函数赋值给变量:
 
 ::
+
     >>> def square(n):
     ...     return n * n;
     >>> square(4)
@@ -19,6 +20,7 @@ Python允许作为程序员的你使用函数完成一些很酷的事情。在Py
 然而，一等函数的真正威力在于你可以把它传给其他函数，或者从其他函数中返回函数。Python的内置函数map利用了这种能力：给map传个函数以及一个列表，它会在列表中每个元素上调用你传给它的那个函数，从而生成一个新的列表。如下所示的例子中应用了上面的那个square函数:
 
 ::
+
     >>> number = [1, 2, 3, 4, 5]
     >>> map(square, numbers)
     [1, 4, 9, 16, 25]
@@ -28,6 +30,7 @@ Python允许作为程序员的你使用函数完成一些很酷的事情。在Py
 例如，假设有这样一个函数，会被调用很多次，以致运行代价非常昂贵:
 
 ::
+
    >>> def fib(n):
    ...      "Recursively (i.e., dreadfully) calculate the nth Fibonacci number."
    ...      return n if n in [0, 1] else fib(n - 2) + fib(n - 1)
@@ -39,6 +42,7 @@ Python允许作为程序员的你使用函数完成一些很酷的事情。在Py
 我们可以把这种memoization代码直接放入fib函数，但是Python为我们提供了另外一种更加优雅的选择。因为可以编写修改其他函数的函数，那么我们可以编写一个通用的memoization函数，以一个函数作为参数，并返回这个函数的memoization版本:
 
 ::
+
     def memoize(fn):
         stored_results = {}
 
@@ -57,6 +61,7 @@ Python允许作为程序员的你使用函数完成一些很酷的事情。在Py
 很好，现在有一个memoization函数了，我们可以把fib函数传给它，从而得到一个经过包装的fib，这个版本的fib函数不需要重复以前那样的繁重工作:
 
 ::
+
     def fib(n):
         return n if n in [0, 1] else fib(n - 2) + fib(n - 1)
     fib = memoize(fib)
@@ -64,6 +69,7 @@ Python允许作为程序员的你使用函数完成一些很酷的事情。在Py
 通过高阶函数memoize，我们获得了memoization带来的好处，并且不需要对fib函数自己做出任何改变，以免夹杂着memoization的代码而模糊了函数的实质工作。但是，你也许注意到上面的代码还算有点别扭，因为我们必须写3遍fib。由于这种模式-传递一个函数给另一个函数，然后将结果返回给与原来那个函数同名的函数变量-在使用包装器函数的代码中极为常见，Python为其提供了一种特殊的语法：装饰器:
 
 ::
+
     @memoize
     def fib(n):
         return n if n in [0, 1] else fib(n - 2) + fib(n -1)
@@ -73,6 +79,7 @@ Python允许作为程序员的你使用函数完成一些很酷的事情。在Py
 你可以将多个装饰器堆叠起来使用，它们会自底向上地逐个起作用。例如，假设我们还有另一个用来帮助调试的高阶函数:
 
 ::
+
     def make_verbose(fn):
         def verbose(*args):
             # will print (e.g.) fib(5)
@@ -84,12 +91,14 @@ Python允许作为程序员的你使用函数完成一些很酷的事情。在Py
 下面的两个代码片段做的是同样的事情:
 
 ::
+
     @memoize
     @make_verbose
     def fib(n):
         return n if n in [0, 1] else fib(n - 2) + fib(n - 1)
 
 ::
+
     def fib(n):
         return n if n in [0, 1] else fib(n - 2) + fib(n - 1)
     fib = memoize(make_verbose(fib))
