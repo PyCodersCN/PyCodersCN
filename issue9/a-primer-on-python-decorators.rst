@@ -97,6 +97,7 @@ Python允许作为程序员的你使用函数完成一些很酷的事情。在Py
 有趣的是，Python并没有限制你在@符号后只能写一个函数名：你也可以调用一个函数，从而能够高效地传递参数给装饰器。假设我们并不满足于简单的memoization，还想将函数的结果存储到memcached中。如果你已经写了一个 ``memcached`` 装饰器函数，那么可以(例如)传递一个服务器地址给它:
 
 ::
+
     @memcached('127.0.0.1:11211')
     def fib(n):
         return n if n in [0, 1] else fib(n - 2) + fib(n - 1)
@@ -104,11 +105,13 @@ Python允许作为程序员的你使用函数完成一些很酷的事情。在Py
 非装饰器语法的写法会如下展开:
 
 ::
+
     fib = memcached('127.0.0.1:11211')(fib)
 
 Python配备有一些作为装饰器使用的非常有用的函数。例如，Python有一个 ``classmethod`` 函数，可以创建大致类似于java的静态方法:
 
 ::
+
     class Foo(object):
         SOME_CLASS_CONSTANT = 42
 
