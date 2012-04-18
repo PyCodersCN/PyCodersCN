@@ -5,7 +5,7 @@ Python装饰器入门
 
 翻译: `youngsterxyf <http://xiayf.blogspot.com/>`_
 
-Python允许你，作为程序员，使用函数完成一些很酷的事情。在Python中，函数是 `一等对象(first-class object) http://en.wikipedia.org/wiki/First-class_function`_ ，这就意味着你可以像使用字符串，整数，或者任何其他对象一样使用函数。例如，你可以将函数赋值给变量:
+Python允许你，作为程序员，使用函数完成一些很酷的事情。在Python中，函数是 `一等对象(first-class object) <http://en.wikipedia.org/wiki/First-class_function>`_ ，这就意味着你可以像使用字符串，整数，或者任何其他对象一样使用函数。例如，你可以将函数赋值给变量:
 
 ::
 
@@ -25,7 +25,7 @@ Python允许你，作为程序员，使用函数完成一些很酷的事情。�
     >>> map(square, numbers)
     [1, 4, 9, 16, 25]
 
-如果一个函数接受其他函数作为参数，以及/或者返回一个函数，那么它就被称为 `高阶函数 http://en.wikipedia.org/wiki/Higher-order_function`_ 。虽然map函数只是简单地使用了我们传给它的函数，而没有改变这个函数，但我们也可以使用高阶函数去改变其他函数的行为。
+如果一个函数接受其他函数作为参数，以及/或者返回一个函数，那么它就被称为 `高阶函数 <http://en.wikipedia.org/wiki/Higher-order_function>`_ 。虽然map函数只是简单地使用了我们传给它的函数，而没有改变这个函数，但我们也可以使用高阶函数去改变其他函数的行为。
 
 例如，假设有这样一个函数，会被调用很多次，以致运行代价非常昂贵:
 
@@ -37,7 +37,7 @@ Python允许你，作为程序员，使用函数完成一些很酷的事情。�
 
 我们一般会保存计算过程中每次递归调用的结果，这样，对于函数调用树中经常出现某个n，当需要计算n对应的结果时，就不需要重复计算了。有多种方式可以做到这点。例如，我们可以将这些结果存在一个字典中，当以某个值为参数调用fib函数时，就先到这个字典去查一下其结果是否已经计算出来了。
 
-但这样的话，每次我们想要调用fib函数，都需要重复那段相同的字典检查样板式代码。相反，如果让fib函数自己在内部负责存储其结果，那么在其他代码中调用fib，就非常方便，只要简单地调用它就行了。这样一种技术被称为 `memoization http://en.wikipedia.org/wiki/Memoization`_ (注意没有字母r的哦)。
+但这样的话，每次我们想要调用fib函数，都需要重复那段相同的字典检查样板式代码。相反，如果让fib函数自己在内部负责存储其结果，那么在其他代码中调用fib，就非常方便，只要简单地调用它就行了。这样一种技术被称为 `memoization <http://en.wikipedia.org/wiki/Memoization>`_ (注意没有字母r的哦)。
 
 我们可以把这种memoization代码直接放入fib函数，但是Python为我们提供了另外一种更加优雅的选择。因为可以编写修改其他函数的函数，那么我们可以编写一个通用的memoization函数，以一个函数作为参数，并返回这个函数的memoization版本:
 
@@ -103,7 +103,7 @@ Python允许你，作为程序员，使用函数完成一些很酷的事情。�
         return n if n in [0, 1] else fib(n - 2) + fib(n - 1)
     fib = memoize(make_verbose(fib))
 
-有趣的是，Python并没有限制你在@符号后只能写一个函数名：你也可以调用一个函数，从而能够高效地传递参数给装饰器。假设我们并不满足于简单的memoization，还想将函数的结果存储到 `memcached http://memcached.org/`_ 中。如果你已经写了一个 ``memcached`` 装饰器函数，那么可以(例如)传递一个服务器地址给它:
+有趣的是，Python并没有限制你在@符号后只能写一个函数名：你也可以调用一个函数，从而能够高效地传递参数给装饰器。假设我们并不满足于简单的memoization，还想将函数的结果存储到 `memcached <http://memcached.org/>`_ 中。如果你已经写了一个 ``memcached`` 装饰器函数，那么可以(例如)传递一个服务器地址给它:
 
 ::
 
@@ -152,7 +152,7 @@ Python函数可以包含更多的信息，而不仅仅是代码：它们也包�
     >>> fib.__doc__
     'Recursively (i.e., dreadfully) calculate the nth Fibonacci number.'
 
-Python内置函数 `help http://docs.python.org/library/functions.html#help`_ 输出的就是这些信息。但是，当函数被包装之后，我们看到就是包装器函数的名称和文档字符串了:
+Python内置函数 `help <http://docs.python.org/library/functions.html#help>`_ 输出的就是这些信息。但是，当函数被包装之后，我们看到就是包装器函数的名称和文档字符串了:
 
 ::
 
