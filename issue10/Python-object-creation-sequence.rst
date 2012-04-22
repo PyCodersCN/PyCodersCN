@@ -1,6 +1,10 @@
 Python对象创建顺序
 =====================
 
+原文： `Python object creation sequence <http://eli.thegreenplace.net/2012/04/16/python-object-creation-sequence/>`_
+
+译者： `youngsterxyf <http://xiayf.blogspot.com/>`_
+
 [本文讨论的Python版本为3.x]
 
 本文旨在探究Python中新对象的创建过程。正如我在 `前一篇文章 <http://eli.thegreenplace.net/2012/03/23/python-internals-how-callables-work/>`_ 中所解释的，对象的创建只是调用可调用对象的一种特例。考虑这样的一段Python代码：
@@ -55,7 +59,7 @@ Python对象创建顺序
         return obj; 
     }
 
-在我们的例子中传给 ``type_call`` 的参数是什么呢？第一个是Joe自己---它是如何表示的呢？好吧，Joe是一个class，因此它是一个 *type* (`Python3中所有的class都是type <http://eli.thegreenplace.net/2012/03/30/python-objects-types-classes-and-instances-a-glossary/>`_)。而type在CPython内部是通过 ``PyTypeObject`` 对象来表示的[2]。
+在我们的例子中传给 ``type_call`` 的参数是什么呢？第一个是Joe自己---它是如何表示的呢？好吧，Joe是一个class，因此它是一个 *type* (`Python3中所有的class都是type <http://eli.thegreenplace.net/2012/03/30/python-objects-types-classes-and-instances-a-glossary/>`_)。而type在CPython虚拟机内部是通过 ``PyTypeObject`` 对象来表示的[2]。
 
 ``type_call`` 首先调用给定类型的 ``tp_new`` 属性。然后，检测一个特殊的情况(为简单起见可忽视先)以确保 ``tp_new`` 返回的是预期类型的对象，然后调用 ``tp_init`` 。如果返回的是一个不同类型的对象，则不将其初始化。
 
@@ -121,7 +125,7 @@ Python对象创建顺序
 更深的挖掘 - tp_new
 ^^^^^^^^^^^^^^^^^^^^^
 
-很好，现在我们对于对象创建顺序有了一个更好的理解，但是这一问题的一个关键部分还没有得到解释。虽然我们几乎总会为类定义方法 ``__init__`` ，但却很少定义 ``__new__`` 。此外，快速浏览一下代码就能明显地发现从某种程度上 ``__new__`` 更为重要。这个方法是被用来创建对象的。每个实例仅调用它一次。另一方面，调用 ``__init__`` 时已经得到了一个构造好的对象，且 ``__init__`` 可能根本不会被调用；而且它也可以被调用多次。
+很好，现在我们对于对象创建顺序有了一个更好的理解，但是这一问题的一个关键部分还没有得到解释。虽然我们几乎总会为类定义方法 ``__init__`` ，但却很少定义 ``__new__`` [3]。此外，快速浏览一下代码就能明显地发现从某种程度上 ``__new__`` 更为重要。这个方法是被用来创建对象的。每个实例仅调用它一次。另一方面，调用 ``__init__`` 时已经得到了一个构造好的对象，且 ``__init__`` 可能根本不会被调用；而且它也可以被调用多次。
 
 在我们的例子中，传递给 ``type_call`` 的参数type是Joe，而Joe并没有自定义的 ``__new__`` 方法，那么 ``type->tp_new`` 的工作将交予基本类型(the base type)的 ``tp_new`` 接口(slot)。Joe( `以及所有其他的Python对象 <http://eli.thegreenplace.net/2012/04/03/the-fundamental-types-of-python-a-diagram/>`_ ，除了object自己)的基本类型是object。CPython内部是通过Objects/typeobject.c中的object_new函数来实现object.tp_new接口的。
 
@@ -133,7 +137,7 @@ Python对象创建顺序
 
 ``tp_alloc`` 是CPython内部类型对象的一个低层次接口，不可以在Python代码中直接访问它，但是C扩展开发人员应该对它比较熟悉。C扩展程序中的自定义类型(custom type)可能会重载这个接口从而为自己的实例提供一个自定义的内存分配方案。然而，大多数的C扩展类型会将其实例的内存分配工作交予 ``PyType_GenericAlloc`` 函数完成。
 
-这个函数是CPython的公共C API的一部分，也恰好将它赋值给了object的 ``tp_alloc`` 接口(在Objects/typeobject.c中定义)。它先算出新对象需要多少内存空间，从CPython的内存分配器中分配一个内存块，将分配得的所有内存单元都初始化为0，然后仅初始化基本的PyObject域(类型与引用计数)，做些垃圾收集簿记(GC bookkeeping)的工作并返回。其结果是一个刚分配的实例。
+这个函数是CPython的公共C API的一部分，也恰好将它赋值给了object的 ``tp_alloc`` 接口(在Objects/typeobject.c中定义)。它先算出新对象需要多少内存空间[4]，从CPython的内存分配器中分配一个内存块，将分配得的所有内存单元都初始化为0，然后仅初始化基本的PyObject域(类型与引用计数)，做些垃圾收集簿记(GC bookkeeping)的工作并返回。其结果是一个刚分配的实例。
 
 结论
 ^^^^^
@@ -146,11 +150,25 @@ Python对象创建顺序
         
         >> 由于Joe没有明确的基类(base class)，它的基类(base)就是object(译注:意思就是Joe继承自object)，因此，调用object_new。
         >> 由于Joe是一个Python代码定义的类，它没有自定义的tp_alloc接口。因此，object_new调用PyType_GenericAlloc。
+
         >> PyType_GenericAlloc分配并初始化一块足够大的内存空间用来存储Joe。
 
     >> 然后type_call继续执行并在刚创建对象上调用Joe.__init__。
 
         >> 由于Joe没有定义__init__，所以调用它的基类的__init__，即object_init。
+        
         >> object_init啥事都没干。
 
-    >> 
+    >> 从type_call返回新的对象并将其绑定到名字j。
+
+如上，就是创建一个类的对象的乏味的流程，这个类没有自定义的metaclass，没有明确的基类，也没有定义它自己的__new__和__init__方法。然而，本文应该已经解释清楚了如何插入自定义功能从而改变对象创建顺序。正如你所见的，Python灵活得令人惊讶，几乎可以自定义上述过程的每个步骤，甚至对于Python代码实现的用户定义的类型也是如此。C扩展中实现的类型可以进行更多的自定义，比如：用于创建类型实例的确切的内存分配策略。
+
+------
+
+[1] type的PyTypeObject结构定义即为Objects/typeobject.c中的PyType_Type。你可以看到type_call被赋值给了它的tp_call接口。
+
+[2] 以后的文章会解说:当创建一个新类时这是怎么实现的。
+
+[3] 甚至当在类中明确地重载了__new__，我们也几乎可以肯定实际的对象创建被推迟到基类的__new__。
+
+[4] 任何类型的PyObject头部都有这个信息。
