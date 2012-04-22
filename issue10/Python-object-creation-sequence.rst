@@ -121,4 +121,36 @@ Python对象创建顺序
 更深的挖掘 - tp_new
 ^^^^^^^^^^^^^^^^^^^^^
 
-很好，现在
+很好，现在我们对于对象创建顺序有了一个更好的理解，但是这一问题的一个关键部分还没有得到解释。虽然我们几乎总会为类定义方法 ``__init__`` ，但却很少定义 ``__new__`` 。此外，快速浏览一下代码就能明显地发现从某种程度上 ``__new__`` 更为重要。这个方法是被用来创建对象的。每个实例仅调用它一次。另一方面，调用 ``__init__`` 时已经得到了一个构造好的对象，且 ``__init__`` 可能根本不会被调用；而且它也可以被调用多次。
+
+在我们的例子中，传递给 ``type_call`` 的参数type是Joe，而Joe并没有自定义的 ``__new__`` 方法，那么 ``type->tp_new`` 的工作将交予基本类型(the base type)的 ``tp_new`` 接口(slot)。Joe( `以及所有其他的Python对象 <http://eli.thegreenplace.net/2012/04/03/the-fundamental-types-of-python-a-diagram/>`_ ，除了object自己)的基本类型是object。CPython内部是通过Objects/typeobject.c中的object_new函数来实现object.tp_new接口的。
+
+``object_new`` 实际上非常简单：先检查某些参数，核实正尝试实例化的类型不是 `抽象 <http://docs.python.org/dev/library/abc.html>`_ 的，然后：
+
+::
+
+    return type->tp_alloc(type, 0)
+
+``tp_alloc`` 是CPython内部类型对象的一个低层次接口，不可以在Python代码中直接访问它，但是C扩展开发人员应该对它比较熟悉。C扩展程序中的自定义类型(custom type)可能会重载这个接口从而为自己的实例提供一个自定义的内存分配方案。然而，大多数的C扩展类型会将其实例的内存分配工作交予 ``PyType_GenericAlloc`` 函数完成。
+
+这个函数是CPython的公共C API的一部分，也恰好将它赋值给了object的 ``tp_alloc`` 接口(在Objects/typeobject.c中定义)。它先算出新对象需要多少内存空间，从CPython的内存分配器中分配一个内存块，将分配得的所有内存单元都初始化为0，然后仅初始化基本的PyObject域(类型与引用计数)，做些垃圾收集簿记(GC bookkeeping)的工作并返回。其结果是一个刚分配的实例。
+
+结论
+^^^^^
+
+以免只见树木不见森林，让我们一起回顾一下文章开始的那个问题。当CPython执行j = Joe()时发生了什么？
+
+    >> 由于Joe没有明确的metaclass，type就是它的类型，因此调用type的tp_call接口，即是，type_call。
+
+    >> type_call一开始就调用Joe的tp_new接口：
+        
+        >> 由于Joe没有明确的基类(base class)，它的基类(base)就是object(译注:意思就是Joe继承自object)，因此，调用object_new。
+        >> 由于Joe是一个Python代码定义的类，它没有自定义的tp_alloc接口。因此，object_new调用PyType_GenericAlloc。
+        >> PyType_GenericAlloc分配并初始化一块足够大的内存空间用来存储Joe。
+
+    >> 然后type_call继续执行并在刚创建对象上调用Joe.__init__。
+
+        >> 由于Joe没有定义__init__，所以调用它的基类的__init__，即object_init。
+        >> object_init啥事都没干。
+
+    >> 
