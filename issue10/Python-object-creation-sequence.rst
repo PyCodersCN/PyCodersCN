@@ -16,7 +16,7 @@ Python对象创建顺序
 
     j = Joe()
 
-当j = Joe()被执行时发生了什么呢？Python把它看作对可调用的Joe的一次调用，并且将它路由到内部函数 ``PyObject_Call`` ，将Joe作为PyObject_Call的第一个参数。 ``PyObject_Call`` 根据其第一个参数的类型抽取这个参数的 ``tp_call`` 属性。
+当j = Joe()被执行时发生了什么呢？Python把它看作对可调用的Joe的一次调用，并且将它路由到内部函数 ``PyObject_Call`` ，将Joe作为PyObject_Call的第一个参数。 ``PyObject_Call`` 根据其第一个参数的类型抽取这个参数类型的 ``tp_call`` 属性。
 
 那么，Joe的类型是什么呢？无论何时我们定义一个新的Python类(class)，它的类型都是 ``type`` ，除非我们明确地为它指定一个 `metaclass <http://eli.thegreenplace.net/2011/08/14/python-metaclasses-by-example/>`_ 。因此，当 ``PyObject_Call`` 试图查看Joe的类型，将得到类型 ``type`` ，然后选择 ``type`` 的 ``tp_call`` 属性。换句话说，就是调用 ``Objects/typeobject.c`` 文件中的函数 ``type_call`` [1]。
 
@@ -59,7 +59,7 @@ Python对象创建顺序
         return obj; 
     }
 
-在我们的例子中传给 ``type_call`` 的参数是什么呢？第一个是Joe自己---它是如何表示的呢？好吧，Joe是一个class，因此它是一个 *type* (`Python3中所有的class都是type <http://eli.thegreenplace.net/2012/03/30/python-objects-types-classes-and-instances-a-glossary/>`_)。而type在CPython虚拟机内部是通过 ``PyTypeObject`` 对象来表示的[2]。
+在我们的例子中传给 ``type_call`` 的参数是什么呢？第一个是Joe自己---它是如何表示的呢？好吧，Joe是一个类(class)，因此它是一个 *类型(type)* (`Python3中所有类都是类型 <http://eli.thegreenplace.net/2012/03/30/python-objects-types-classes-and-instances-a-glossary/>`_)。而类型在CPython虚拟机内部是通过 ``PyTypeObject`` 对象来表示的[2]。
 
 ``type_call`` 首先调用给定类型的 ``tp_new`` 属性。然后，检测一个特殊的情况(为简单起见可忽视先)以确保 ``tp_new`` 返回的是预期类型的对象，然后调用 ``tp_init`` 。如果返回的是一个不同类型的对象，则不将其初始化。
 
@@ -127,7 +127,7 @@ Python对象创建顺序
 
 很好，现在我们对于对象创建顺序有了一个更好的理解，但是这一问题的一个关键部分还没有得到解释。虽然我们几乎总会为类定义方法 ``__init__`` ，但却很少定义 ``__new__`` [3]。此外，快速浏览一下代码就能明显地发现从某种程度上 ``__new__`` 更为重要。这个方法是被用来创建对象的。每个实例仅调用它一次。另一方面，调用 ``__init__`` 时已经得到了一个构造好的对象，且 ``__init__`` 可能根本不会被调用；而且它也可以被调用多次。
 
-在我们的例子中，传递给 ``type_call`` 的参数type是Joe，而Joe并没有自定义的 ``__new__`` 方法，那么 ``type->tp_new`` 的工作将交予基本类型(the base type)的 ``tp_new`` 接口(slot)。Joe( `以及所有其他的Python对象 <http://eli.thegreenplace.net/2012/04/03/the-fundamental-types-of-python-a-diagram/>`_ ，除了object自己)的基本类型是object。CPython内部是通过Objects/typeobject.c中的object_new函数来实现object.tp_new接口的。
+在我们的例子中，传递给 ``type_call`` 的参数type是Joe，而Joe并没有自定义的 ``__new__`` 方法，那么 ``type->tp_new`` 的工作将交予基本类型(the base type)的结构成员(slot) ``tp_new`` 。Joe( `以及所有其他的Python对象 <http://eli.thegreenplace.net/2012/04/03/the-fundamental-types-of-python-a-diagram/>`_ ，除了object自己)的基本类型是object。CPython内部是通过Objects/typeobject.c中的object_new函数来实现object.tp_new结构成员的。
 
 ``object_new`` 实际上非常简单：先检查某些参数，核实正尝试实例化的类型不是 `抽象 <http://docs.python.org/dev/library/abc.html>`_ 的，然后：
 
@@ -135,20 +135,21 @@ Python对象创建顺序
 
     return type->tp_alloc(type, 0)
 
-``tp_alloc`` 是CPython内部类型对象的一个低层次接口，不可以在Python代码中直接访问它，但是C扩展开发人员应该对它比较熟悉。C扩展程序中的自定义类型(custom type)可能会重载这个接口从而为自己的实例提供一个自定义的内存分配方案。然而，大多数的C扩展类型会将其实例的内存分配工作交予 ``PyType_GenericAlloc`` 函数完成。
+``tp_alloc`` 是CPython内部类型对象的一个低层次结构成员，不可以在Python代码中直接访问它，但是C扩展开发人员应该对它比较熟悉。C扩展程序中的自定义类型(custom type)可能会重载这个结构成员从而为自己的实例提供一个自定义的内存分配方案。然而，大多数的C扩展类型会将其实例的内存分配工作交予 ``PyType_GenericAlloc`` 函数完成。
 
-这个函数是CPython的公共C API的一部分，也恰好将它赋值给了object的 ``tp_alloc`` 接口(在Objects/typeobject.c中定义)。它先算出新对象需要多少内存空间[4]，从CPython的内存分配器中分配一个内存块，将分配得的所有内存单元都初始化为0，然后仅初始化基本的PyObject域(类型与引用计数)，做些垃圾收集簿记(GC bookkeeping)的工作并返回。其结果是一个刚分配的实例。
+这个函数是CPython的公共C API的一部分，也恰好将它赋值给了object的结构成员 ``tp_alloc`` (在Objects/typeobject.c中定义)。它先算出新对象需要多少内存空间[4]，从CPython的内存分配器中分配一个内存块，将分配得的所有内存单元都初始化为0，然后仅初始化基本的PyObject域(类型与引用计数)，做些垃圾收集簿记(GC bookkeeping)的工作并返回。其结果是一个刚分配的实例。
 
 结论
 ^^^^^
 
-以免只见树木不见森林，让我们一起回顾一下文章开始的那个问题。当CPython执行j = Joe()时发生了什么？
+为了避免只见树木不见森林，让我们一起回顾一下文章开始的那个问题。当CPython执行j = Joe()时发生了什么？
 
     >> 由于Joe没有明确的metaclass，type就是它的类型，因此调用type的tp_call接口，即是，type_call。
 
     >> type_call一开始就调用Joe的tp_new接口：
         
         >> 由于Joe没有明确的基类(base class)，它的基类(base)就是object(译注:意思就是Joe继承自object)，因此，调用object_new。
+        
         >> 由于Joe是一个Python代码定义的类，它没有自定义的tp_alloc接口。因此，object_new调用PyType_GenericAlloc。
 
         >> PyType_GenericAlloc分配并初始化一块足够大的内存空间用来存储Joe。
@@ -165,10 +166,17 @@ Python对象创建顺序
 
 ------
 
-[1] type的PyTypeObject结构定义即为Objects/typeobject.c中的PyType_Type。你可以看到type_call被赋值给了它的tp_call接口。
+[1] type的PyTypeObject结构定义即为Objects/typeobject.c中的PyType_Type。你可以看到type_call被赋值给了它的结构成员tp_call。
 
 [2] 以后的文章会解说:当创建一个新类时这是怎么实现的。
 
 [3] 甚至当在类中明确地重载了__new__，我们也几乎可以肯定实际的对象创建被推迟到基类的__new__。
 
 [4] 任何类型的PyObject头部都有这个信息。
+
+------
+译注:
+
+1. sequence直译成"序列，顺序"，可能会不容易理解文章的意思，所以可能翻译成" **过程** "更合适一些。
+
+2. CPython中用C语言的结构(struct)来定义对象(类型也是对象)的，所以一个对象所具有的方法或者属性都是结构的成员，所以把slot翻译成" **结构成员** "应该比较合适。
