@@ -112,4 +112,68 @@
         ...
         return item
 
-**注解** : 为了确认你定义的XPath选择器(selectors)，我建议你使用Firebug，Firefox Inspect或者其他类似的工具来检查页面的HTML代码，然后在 `Scrapy shell <http://doc.scrapy.org/en/latest/intro/tutorial.html#trying-selectors-in-the-shell>`_ 中测试选择器。
+**注解** : 为了确认你定义的XPath选择器(selectors)，我建议使用Firebug，Firefox Inspect或者其他类似的工具来检查页面的HTML代码，然后在 `Scrapy shell <http://doc.scrapy.org/en/latest/intro/tutorial.html#trying-selectors-in-the-shell>`_ 中测试选择器，只有当数据位置与你要抓取的所有网页相一致时才有效。
+
+结果存入MongoDB
+-----------------
+
+我们想要每次 `parse_blogpost` 方法返回的项都被发送到一个管道中进行数据验证并存入MongoDB中。
+
+首先，我们需要在 ``settings.py`` 中加入一些东西：
+
+::
+
+    ITEM_PIPELINES = ['isbullshit.pipelines.MongoDBPipeline',]
+
+    MONGODB_SERVER = "localhost"
+    MONGODB_PORT = 27017
+    MONGODB_DB = "isbullshit"
+    MONGODB_COLLECTION = "blogposts"
+
+既然已经定义了管道，MongoDB数据库以及数据集合(collection)，下面来看看管道的实现。我们希望确保没有任何缺失的数据(例如：没有标题，或者作者，或者其他的博文)。
+
+如下就是 ``pipelines.py`` 文件的内容：
+
+::
+
+    import pymongo
+
+    from scrapy.exception import DropItem
+    from scrapy.conf import settings
+    from scrapy import log
+    class MongoDBPipeline(object):
+        def __int__(self):
+            connection = pymongo.Connection(settings['MONGODB_SERVER'], settings['MONGODB_PORT'])
+            db = connection[settings['MONGODB_DB']]
+            self.collection = db[settings['MONGODB_COLLECTION']]
+
+        def process_item(self, item, spider):
+            valid = True
+            for data in item:
+                # here we only check if the data is not null
+                # but we could do any crazy validation we want
+                if not data:
+                    valid = False
+                    raise DropItem("Missing %s of blogpost from %s" % (data, item['url']))
+            if valid:
+                self.collection.insert(dict(item))
+                log.msg("Item wrote to MongoDB database %s/%s" %
+                        (settings['MONGODB_DB'], settings['MONGODB_COLLECTION']),
+                        level=log.DEBUG, spider=spider)
+            return item
+
+发布爬虫
+-------------
+
+现在，我们需要做的就是切换到项目的根目录，然后执行：
+
+::
+
+    $ scrapy crawl isbullshit
+
+然后爬虫就会沿着所有指向博文的链接，检索博文的标题，作者名字，日期，等等，验证抽取的数据，如果顺利通过验证则把所有东西存入MongoDB的数据集合中。
+
+相当简洁，是不是？
+
+结论
+-----
