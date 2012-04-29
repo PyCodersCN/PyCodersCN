@@ -177,3 +177,11 @@
 
 结论
 -----
+
+这个案例有点过分简单化了：所有的URL都有相似的模式，所有链接都在HTML代码中硬编码的，没有涉及JS。在链接由JS代码生成的情况下，你可能会想试试 `Selenium <http://pypi.python.org/pypi/selenium>`_ 库。你可以给爬虫添加新的规则或者更加复杂的正则表达式，但我只是想演示一下Scrapy是如何工作的，而不是陷入疯狂的正则表达式解说。
+
+而且，请注意，有时，在玩玩网页抓取与 `惹上麻烦 <https://en.wikipedia.org/wiki/Web_scraping#Legal_issues>`_ 之间只是一纸之隔。
+
+最后，在玩网页抓取时，请谨记也许你是在使用大量的请求冲击服务器，有时这会造成你的IP被屏蔽。
+
+请别成了一只 `鸭子(d*ick) <http://cdn.memegenerator.net/instances/400x/19196799.jpg>`_
