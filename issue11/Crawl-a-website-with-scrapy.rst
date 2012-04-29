@@ -14,7 +14,7 @@
 
 本文假设你有一个 `工作的MongoDB服务器 <http://www.mongodb.org/display/DOCS/Quickstart>`_ ，并已安装 ``pymongo`` 和 ``scrapy`` ，这两个python包都可以使用 ``pip`` 进行安装。
 
-如果你从来没玩过 `Scrapy <http://scrapy.org/>`_ ，那么你应该先读一下这篇 `简短的教程 <http://doc.scrapy.org/en/latest/intro/tutorial.html>`_ 。
+如果你从来没玩过 `Scrapy <http://scrapy.org/>`_ ，那么应该先读一下这篇 `简短的教程 <http://doc.scrapy.org/en/latest/intro/tutorial.html>`_ 。
 
 第一步，识别URL模式
 ---------------------
@@ -29,7 +29,7 @@
 
 - 发布日期(release date)
 
-- url
+- 统一资源定位符(url)
 
 幸运地，所有的博文都有相同的URL模式： ``http://isbullsh.it/YYYY/MM/title`` 。这些链接可以从站点主页的不同页面上找到。
 
@@ -53,7 +53,7 @@
     |        |--- isbullshit_spiders.py
     |___scrapy.cfg
 
-首先在 ``items.py`` 中定义包含抽取信息的项的结构：
+首先在 ``items.py`` 中定义包含抽取信息的项(item)的结构：
 
 ::
 
@@ -66,7 +66,7 @@
         date = Field()
         link = Field()
 
-现在，让我们在 ``isbullshit_spiders.py`` 中实现爬虫：
+然后在 ``isbullshit_spiders.py`` 中实现爬虫：
 
 ::
 
@@ -86,18 +86,18 @@
         def parse_blogpost(self, response):
             ...
 
-我们的爬虫继承自 ``CrawlSpider`` ，因为它提供了一种便利的机制来通过定义一组规则来跟随链接。更多的信息请看 `这里 <http://readthedocs.org/docs/scrapy/en/0.14/topics/spiders.html#crawlspider>`_ 。
+我们的爬虫继承自 ``CrawlSpider`` ，因为它"提供了一种便利的机制，通过定义一组规则来跟随链接"。更多的信息请看 `这里 <http://readthedocs.org/docs/scrapy/en/0.14/topics/spiders.html#crawlspider>`_ 。
 
 然后定义了两个简单的规则：
 
-- 跟随指向 `http://isbullsh.it/page/X` 的链接
+- 跟随指向 ``http://isbullsh.it/page/X`` 的链接
 
-- 使用回调方法 `parse_blogpost` 从URL模式 `http://isbullsh.it/YYYY/MM/title` 定义的页面中抽取信息
+- 使用回调方法 ``parse_blogpost`` 从URL模式 ``http://isbullsh.it/YYYY/MM/title`` 定义的页面中抽取信息
 
 抽取数据
 ----------
 
-为了从HTML代码中抽取标题，作者，等等，我们将使用 `scrapy.selector.HtmlXPathSelector` 对象，这个对象使用了 `libxml2` HTML语法分析器。如果你对这个对象不熟悉，那么应该读一读 ``XPathSelector`` `文档 <http://readthedocs.org/docs/scrapy/en/0.14/topics/selectors.html#using-selectors-with-xpaths>`_ 。
+为了从HTML代码中抽取标题，作者，等等，我们将使用 ``scrapy.selector.HtmlXPathSelector`` 对象，这个对象使用了 ``libxml2`` HTML语法分析器。如果你对这个对象不熟悉，那么应该读一读 ``XPathSelector`` `文档 <http://readthedocs.org/docs/scrapy/en/0.14/topics/selectors.html#using-selectors-with-xpaths>`_ 。
 
 现在我们在 ``parse_blogpost`` 方法中定义抽取的逻辑(这里仅定义标题和标签的抽取逻辑，因为其实逻辑基本上都是一样的)：
 
@@ -130,7 +130,7 @@
     MONGODB_DB = "isbullshit"
     MONGODB_COLLECTION = "blogposts"
 
-既然已经定义了管道，MongoDB数据库以及数据集合(collection)，下面来看看管道的实现。我们希望确保没有任何缺失的数据(例如：没有标题，或者作者，或者其他的博文)。
+既然已经定义了管道，MongoDB数据库以及数据集合(collection)，下面来看看管道的实现。我们希望确保没有任何缺失的数据(例如：没有标题，或者作者，或者其他信息的博文)。
 
 如下就是 ``pipelines.py`` 文件的内容：
 
@@ -165,7 +165,7 @@
 发布爬虫
 -------------
 
-现在，我们需要做的就是切换到项目的根目录，然后执行：
+现在，我们需要做的就是切换到项目的根目录，执行：
 
 ::
 
@@ -178,7 +178,7 @@
 结论
 -----
 
-这个案例有点过分简单化了：所有的URL都有相似的模式，所有链接都在HTML代码中硬编码的，没有涉及JS。在链接由JS代码生成的情况下，你可能会想试试 `Selenium <http://pypi.python.org/pypi/selenium>`_ 库。你可以给爬虫添加新的规则或者更加复杂的正则表达式，但我只是想演示一下Scrapy是如何工作的，而不是陷入疯狂的正则表达式解说。
+这个案例有点过分简单化了：所有的URL都有相似的模式，所有链接都是在HTML代码中硬编码的，没有涉及JS。在链接由JS代码生成的情况下，你可能会想试试 `Selenium <http://pypi.python.org/pypi/selenium>`_ 库。你可以给爬虫添加新的规则或者更加复杂的正则表达式，但我只是想演示一下Scrapy是如何工作的，而不是陷入疯狂的正则表达式解说。
 
 而且，请注意，有时，在玩玩网页抓取与 `惹上麻烦 <https://en.wikipedia.org/wiki/Web_scraping#Legal_issues>`_ 之间只是一纸之隔。
 
