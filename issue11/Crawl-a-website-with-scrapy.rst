@@ -53,4 +53,63 @@
     |        |--- isbullshit_spiders.py
     |___scrapy.cfg
 
+首先在 ``items.py`` 中定义包含抽取信息的项的结构：
 
+::
+
+    from scrapy.item import Item, Field
+
+    class IsBullshitItem(Item):
+        title = Field()
+        author = Field()
+        tag = Field()
+        date = Field()
+        link = Field()
+
+现在，让我们在 ``isbullshit_spiders.py`` 中实现爬虫：
+
+::
+
+    from scrapy.contrib.spiders import CrawlSpider, Rule
+    from scrapy.contrib.linkextractor.sgml import SgmlLinkExtractor
+    from scrapy.selector import HtmlXPathSelector
+    from isbullshit.items import IsBullshitItem
+
+    class IsBullshitSpider(CrawlSpider):
+        name = 'isbullshit'
+        start_urls = ['http://isbullsh.it'] # urls from which the spider will start crawling
+        rules = [Rule(SgmlLinkExtractor(allow=[r'page/\d+']),follow=True),
+            # r'page/\d+' : regular expression for http://isbullsh.it/page/X URLs
+            Rule(SgmlLinkExtractor(allow=[r'\d{4}/\d{2}\w+']), callback='parse_blogpost')]
+            # r'\d{4}/\d{2}/\w+' : regular expression for http://isbullsh.it/YYYY/MM/title URLs
+
+        def parse_blogpost(self, response):
+            ...
+
+我们的爬虫继承自 ``CrawlSpider`` ，因为它提供了一种便利的机制来通过定义一组规则来跟随链接。更多的信息请看 `这里 <http://readthedocs.org/docs/scrapy/en/0.14/topics/spiders.html#crawlspider>`_ 。
+
+然后定义了两个简单的规则：
+
+- 跟随指向 `http://isbullsh.it/page/X` 的链接
+
+- 使用回调方法 `parse_blogpost` 从URL模式 `http://isbullsh.it/YYYY/MM/title` 定义的页面中抽取信息
+
+抽取数据
+----------
+
+为了从HTML代码中抽取标题，作者，等等，我们将使用 `scrapy.selector.HtmlXPathSelector` 对象，这个对象使用了 `libxml2` HTML语法分析器。如果你对这个对象不熟悉，那么应该读一读 ``XPathSelector`` `文档 <http://readthedocs.org/docs/scrapy/en/0.14/topics/selectors.html#using-selectors-with-xpaths>`_ 。
+
+现在我们在 ``parse_blogpost`` 方法中定义抽取的逻辑(这里仅定义标题和标签的抽取逻辑，因为其实逻辑基本上都是一样的)：
+
+::
+
+    def parse_blogpost(self, response):
+        hxs = HtmlXPathSelector(response)
+        item = IsBullshitItem()
+        # Extract title
+        item['title'] = hxs.select('//header/h1/text()').extract()  # XPath selector for title
+        item['tag'] = hxs.select("//header/div[@class='post-data']/p/a/text()").extract()   # Xpath selector for tag(s)
+        ...
+        return item
+
+**注解** : 为了确认你定义的XPath选择器(selectors)，我建议你使用Firebug，Firefox Inspect或者其他类似的工具来检查页面的HTML代码，然后在 `Scrapy shell <http://doc.scrapy.org/en/latest/intro/tutorial.html#trying-selectors-in-the-shell>`_ 中测试选择器。
