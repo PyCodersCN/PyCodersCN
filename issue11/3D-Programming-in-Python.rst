@@ -114,4 +114,139 @@ Python 3D编程 --- 第一部分
 
     pyglet.app.run()
 
+你应该注意到这段代码并没有改变多少东西。glBegin函数的参数现在是GL_LINES以告诉OpenGL我们将绘制线段而不是点。我们也另外添加了一个顶点。这样我们将得到两线段。当我们告诉OpenGL将要绘制GL_LINES，OpenGL就会等你定义两个顶点，并且一旦你定义好了，它就会在这两点之间画一线段。因此，本例中，我们将得到一根以点(50,50)和(75,100)为端点的线段，以及一根以(100,150)和(200,200)为端点的线段。
 
+修改后的代码运行结果如下：
+
+.. image:: http://greendalecs.files.wordpress.com/2012/04/shot1.png
+
+另一种绘制线段的方式是使用GL_LINE_STRIP。如果使用这种方式，OpenGL会等你定义开始的两个顶点，然后在这两点之间画线。之后，OpenGL会在任意随后定义的顶点与前一个顶点之间画线。因此，本例中，第一条线是从(50,50)画到(75,100)，第二条线从(75,100)到(100,150)，第三条线从(100,150)到(200,200)，看起来是这样的：
+
+.. image:: http://greendalecs.files.wordpress.com/2012/04/shot2.png
+
+最后，如果你想画一个闭合的环，可以使用GL_LINE_LOOP。其实它做的事情和GL_LINE_STRIP是一样的，除了会在最后定义的顶点与最开始的顶点之间画一条线，从而闭合了这个环。在我们的例子中，结果如下所示：
+
+.. image:: http://greendalecs.files.wordpress.com/2012/04/shot3.png
+
+OK，既然我们已经掌握了画线，接下来就来画三角形。
+
+::
+
+    import pyglet
+    from pyglet.gl import *
+
+    win = pyglet.window.Window()
+
+    @win.event
+    def on_draw():
+
+        # Clear buffers
+        glClear(GL_COLOR_BUFFER_BIT)
+
+        # Draw outlines only
+        glPolygonMode(GL_FRONT_AND_BACK, GL_LINE)
+
+        # Draw some stuff
+        glBegin(GL_TRIANGLES)
+        glVertex2i(50, 50)
+        glVertex2i(75, 100)
+        glVertex2i(200, 200)
+        glEnd()
+
+    pyglet.app.run()
+
+再一次地，这段代码和我们前面使用的非常一致。然后你应该注意到我们添加了一行代码来调用glPolygonMode。我不会深入地解说传递给这个函数的第一个参数，GL_FRONT_AND_BACK，因为我可能会写一篇完整的单独的帖子来解释环绕的顺序以及向前向后的方向问题。然而，第二个参数，GL_LINE，却是非常直观的。它就是告诉OpenGL我们要画的所有东西都是轮廓。默认设置为GL_FILL，但我们这里不能改成这样，因为你不可能填充一条线。
+
+调用参数为元件GL_TRIANGLES的glBegin，告诉OpenGL每3个顶点定义一个三角形。由于glPolygonMode的第二个参数设置为GL_LINE，这样我们每定义三个顶点，就会在屏幕上绘制一个三角形的轮廓。这段代码的结果如下图所示：
+
+.. image:: http://greendalecs.files.wordpress.com/2012/04/shot4.png
+
+接下来，我们看看三角形带(triangle strip)。
+
+::
+
+    import pyglet
+    from pyglet.gl import *
+
+    win = pyglet.window.Window()
+
+    @win.event
+    def on_draw():
+
+        # Clear buffers
+        glClear(GL_COLOR_BUFFER_BIT)
+
+        # Draw outlines only
+        glPolygonMode(GL_FRONT_AND_BACK, GL_LINE)
+
+        # Draw some stuff
+        glBegin(GL_TRIANGLE_STRIP)
+        glVertex2i(50, 50)
+        glVertex2i(75, 100)
+        glVertex2i(200, 200)
+        glVertex2i(50, 250)
+        glEnd()
+
+    pyglet.app.run()
+
+三角形带的行为类似于线条。当我们调用glBegin(GL_TRIANGLE_STRIP)，OpenGL会使用最开始三个顶点画一个三角形。之后，每个接着定义的顶点都与之前两个顶点构成一个三角形。因此，本例中，第一个三角形是基于线条17，18，19的顶点画成的。第二个三角形是基于线条18，19，20的顶点画成的，得到如下图形：
+
+.. image:: http://greendalecs.files.wordpress.com/2012/04/shot5.png
+
+画三角形的最后一种方法是使用GL_TRIANGLE_FAN。这允许你围绕一个中心点绘制很多三角形。
+
+::
+
+    import pyglet
+    from pyglet.gl import *
+
+    win = pyglet.window.Window()
+
+    @win.event
+    def on_draw():
+
+        # Clear buffers
+        glClear(GL_COLOR_BUFFER_BIT)
+
+        # Draw outlines only
+        glPolygonMode(GL_FRONT_AND_BACK, GL_LINE)
+
+        # Draw some stuff
+        glBegin(GL_TRIANGLE_FAN)
+        glVertex2i(200, 200)
+        glVertex2i(200, 300)
+        glVertex2i(250, 250)
+        glVertex2i(300, 200)
+        glVertex2i(250, 150)
+        glVertex2i(200, 100)
+        glEnd()
+
+    pyglet.app.run()
+
+我们定义的第一个顶点，(200, 200)，定义了三角扇形的原点。在使用接下来的两个顶点定义了第一个三角形之后，我们依次创建了一列顶点，使用当前顶点，前一个顶点以及原始顶点定义三角形。因此本例中，第一个三角形基于线17, 18, 19的顶点定义，下一个三角形基于线17，19，20的顶点，再接下来的一个基于线17，20，21的顶点，最后一个则基于线17，21，22的顶点。结果如下图所示：
+
+.. image:: http://greendalecs.files.wordpress.com/2012/04/shot6.png
+
+还有另外三种元件类型我没涉及，主要是因为它们相对比较直观，如果你已掌握目前为止讲述的东西，那你也应该能够理解如何使用它们，非常简单的。以下是我们已涉及的元件列表，包括三个我们还没涉及的：
+
+- GL_POINTS
+
+- GL_LINES
+
+- GL_LINE_STRIP
+
+- GL_LINE_LOOP
+
+- GL_TRIANGLES
+
+- GL_TRIANGLE_STRIP
+
+- GL_TRIANGLE_FAN
+
+- GL_QUADS
+
+- GL_QUAD_STRIP
+
+- GL_POLYGON
+
+下一篇教程将涉及环绕顺序(winding order)以及怎样绘制大量的元件。
