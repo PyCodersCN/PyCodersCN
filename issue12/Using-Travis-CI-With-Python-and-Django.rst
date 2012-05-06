@@ -1,7 +1,7 @@
 将Travis-CI用于Python和Django
 ===============================
 
-原文：`Using Travis-CI With Python and Django <http://justcramer.com/2012/05/03/using-travis-ci/>`_ 
+原文： `Using Travis-CI With Python and Django <http://justcramer.com/2012/05/03/using-travis-ci/>`_ 
 
 译者： `youngsterxyf <http://xiayf.blogspot.com/>`_
 
