@@ -195,7 +195,7 @@ Brubeck
 
 这是一个新的 Python 框架。其并不使用 WSGI 而直接在语言级别用 Mongrel2 作为服务器使用，这个仅把请求处理交给 Python 程序，请求作为协同程序来处理。
 
-模块方面 Brubeck 使用了 DictShield 库，which means that plugins for different database layers could be written on top of it. (求翻译)
+模块方面 Brubeck 使用了 DictShield 库，意思就是对于不同的数据库插件都可以在其之上来进行操作。
 
 Brubeck 的文档非常少，但是你看到源码以后，你会知道其实并没有多少东西。所以它还是一个非常年轻并且在不断发展的框架。Hello World 例子看起来也很漂亮。
 
@@ -228,24 +228,3 @@ common patterns － 常见范例
 micro glue framework － 微型的胶水框架
 
 coroutine － 协同程序
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
