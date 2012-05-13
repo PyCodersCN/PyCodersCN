@@ -25,6 +25,7 @@
 Python 2.4 开始加入了新的支持 ``sorted()`` ，它会返回一个排好序的列表并且接受和 ``.sort()`` 一样的参数。使用 ``sorted()`` 你可以避免改变列表的结构。它还可以接受迭代器作为输入而不只是列表，这样可以让你的代码看起来更棒。
 
 ::
+
     >>> infile = open('pythons.txt')
     >>> [x.strip() for x in sorted(infile)]
     ['Eric', 'Graham', 'John', 'Michael', 'Terry', 'Terry']
