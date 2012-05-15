@@ -11,6 +11,9 @@ PyCoder's Weekly 中文翻译
 .. toctree::
    :maxdepth: 3
 
+   issue13/index
+   issue12/index
+   issue11/index
    issue10/index
    issue9/index
    issue8/index
