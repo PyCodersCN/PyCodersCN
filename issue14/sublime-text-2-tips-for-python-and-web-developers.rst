@@ -20,7 +20,7 @@ Sublime 用起来更舒适。当你需要使用不同的工具和工程的时候
 
 `Sublime 插件包管理 <http://opensourcehacker.com/2012/04/12/jslint-integration-for-sublime-text-2/>`_ 。你按照这样的步骤就可以安装任何插件了。它可以自动帮你使用云端(或者 Github)的资源安装。
 
-.. image:: ./images/Screen-shot-2012-05-11-at-2.04.05-AM.png
+.. image:: http://opensourcehacker.com/wp-content/uploads/2012/05/Screen-shot-2012-05-11-at-2.04.05-AM.png
     :alt: Sublime 插件包管理
 
 在插件包管理安装以后你可以按 CMD + SHIFT + P 来添加新的包。
@@ -49,7 +49,7 @@ Sublime 用起来更舒适。当你需要使用不同的工具和工程的时候
 
 然后整个 src/ 文件夹就会被打开。
 
-.. image:: ./images/Screen-shot-2012-05-11-at-2.03.02-AM.png
+.. image:: http://opensourcehacker.com/wp-content/uploads/2012/05/Screen-shot-2012-05-11-at-2.03.02-AM.png
     :alt: 在 Sublime 中打开文件夹
 
 *提示：一个文件夹 = 一个项目 = 一个窗口？我不确定是不是还有办法让一个窗口显示多个项目*
@@ -72,7 +72,7 @@ Sublime 用起来更舒适。当你需要使用不同的工具和工程的时候
 
 打开文件，然后 *View > Syntax >Open all with current extension as… ->[你想要的语法选择]*
 
-.. image:: ./images/Screen-shot-2012-05-11-at-2.01.03-AM.png
+.. image:: http://opensourcehacker.com/wp-content/uploads/2012/05/Screen-shot-2012-05-11-at-2.01.03-AM.png
     :alt: 语法高亮的选择
 
 查看更多关于语法高亮的 `资料 <http://stackoverflow.com/a/8014142/315168>`_ 。
@@ -82,7 +82,7 @@ Sublime 用起来更舒适。当你需要使用不同的工具和工程的时候
 
 `SublimeLinter <https://github.com/Kronuz/SublimeLinter/>`_ 会在你键入的时候在后台扫描你的文件以保证正确性。请查看 README 的 Configuration 部分。不过你可能需要安装额外的软件(比如 Node.js)来保证功能的完整性。
 
-.. image:: ./images/Screen-shot-2012-05-11-at-1.48.41-AM.png
+.. image:: http://opensourcehacker.com/wp-content/uploads/2012/05/Screen-shot-2012-05-11-at-1.48.41-AM.png
     :alt: 语法匹配
 
 使用 CodeIntel 自动补全支持
@@ -115,7 +115,7 @@ CodeIntel 假定在你的项目根目录下面有 ``.codeintel`` 文件，键入
 
     from zope.interface import <--- 这时候就应该蹦出来自动补全选项了
 
-.. image:: ./images/Screen-shot-2012-05-11-at-1.57.41-AM1.png
+.. image:: http://opensourcehacker.com/wp-content/uploads/2012/05/Screen-shot-2012-05-11-at-1.57.41-AM1.png
     :alt: 自动补全
 
 而且，ALT + 鼠标左键可以把你带到 ``import`` 或者函数的声明部分。
@@ -127,7 +127,7 @@ CodeIntel 也支持 PHP, Ruby, JS, 这里只列出一小部分。
 
 按下 CMD + P，键入文件名的一小部分，就可以提示你全路径。非常强大的一个特性。
 
-.. image:: ./images/Screen-shot-2012-05-11-at-2.08.51-AM.png
+.. image:: http://opensourcehacker.com/wp-content/uploads/2012/05/Screen-shot-2012-05-11-at-2.08.51-AM.png
     :alt: 快速到达任何地方
 
 使用 CTRL + G 来到达任意行。
@@ -137,12 +137,12 @@ CodeIntel 也支持 PHP, Ruby, JS, 这里只列出一小部分。
 
 针对 JS, CSS, Python 等语言设计。按下 CMD + R。输入你需要查找的内容，就会自动跳转到声明部分。
 
-.. image:: ./images/Screen-shot-2012-05-11-at-2.12.41-AM.png
+.. image:: http://opensourcehacker.com/wp-content/uploads/2012/05/Screen-shot-2012-05-11-at-2.12.41-AM.png
     :alt: 文件内搜索1
 
 或者 Python：
 
-.. image:: ./images/Screen-shot-2012-05-11-at-2.29.11-AM.png
+.. image:: http://opensourcehacker.com/wp-content/uploads/2012/05/Screen-shot-2012-05-11-at-2.29.11-AM.png
     :alt: 文件内搜索2
 
 HTML/XML 标签工具
@@ -152,7 +152,7 @@ HTML/XML 标签工具
 
 用插件包管理器安装 ``Tag`` 。然后你就可以：
 
-.. image:: ./images/Screen-shot-2012-05-11-at-2.13.31-AM.png
+.. image:: http://opensourcehacker.com/wp-content/uploads/2012/05/Screen-shot-2012-05-11-at-2.13.31-AM.png
     :alt: 标签工具
 
 选择文本然后按下 CMD + SHIFT + P 搜索标签。然后就会一目了然，你也可以配置你自己风格的偏好。
@@ -162,7 +162,7 @@ git
 
 你可以使用 kemayo 的 `git 插件 <https://github.com/kemayo/sublime-text-2-git/wiki>`_ ，也是从插件包管理器安装。
 
-.. image:: ./images/Screen-shot-2012-05-11-at-2.18.06-AM.png
+.. image:: http://opensourcehacker.com/wp-content/uploads/2012/05/Screen-shot-2012-05-11-at-2.18.06-AM.png
     :alt: git支持
 
 还未解决的问题
