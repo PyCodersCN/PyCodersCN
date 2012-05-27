@@ -6,7 +6,7 @@
 PyCoder's Weekly 中文翻译
 =============================================================
 
-`PyCoder's Weekly 订阅 <http://pycoders.com/>`_ | `View project on Github <https://github.com/PyCodersCN/PyCodersCN>`_
+`PyCoder's Weekly 订阅 <http://pycoders.com/>`_ | `订阅中文邮件列表 <http://pycoderscn.github.com/PyCodersCN/>`_ | `View project on Github <https://github.com/PyCodersCN/PyCodersCN>`_
 
 .. toctree::
    :maxdepth: 3
