@@ -6,7 +6,9 @@ Hi Pythonistas,
 本周的新闻并不是很多，不过贴纸的事情倒是有很多要说的，我们这星期会收到新设计的贴纸，所以赶快给我们寄来回邮吧，我们的地址是：
 
     44 Byward Market Square, Suite 210
+
     Ottawa, Ontario Canada 
+    
     K1P 7A2
 
 RSS 订阅和存档可以在 `这里 <http://feeds.feedburner.com/pycodersweekly>`_ 和 `这里 <http://pycoders.com/archive.html>`_ 找到。
@@ -83,7 +85,7 @@ dnspython 是一个用 Python 写的 DNS 工具箱，换言之， dnspython 是�
 
 这篇文章很好的解释了 Python 中本地线程的奇怪之处，作者比较了新版本与旧版本 Python 的本地线程的不同之处，读一下吧。
 
-`RQ Tips <http://nvie.com/posts/introducing-rq/>`_
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+:doc:`RQ Tips <rq-tips>`
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-RQ 是最近发布的一个任务队列处理库，对于任务队列我们更常用 Celery ，不过 RQ 仍然是一个不错的选择，因为他仅仅依赖 Redis ，所以比起 Celery ， RQ 要更易于管理，这篇文章中介绍了许多关于在生产环境中部署 RQ 的提示。
+`RQ <http://nvie.com/posts/introducing-rq/>`_ 是最近发布的一个任务队列处理库，对于任务队列我们更常用 `Celery <http://celeryproject.org/>`_ ，不过 RQ 仍然是一个不错的选择，因为他仅仅依赖 Redis ，所以比起 Celery ， RQ 要更易于管理，这篇文章中介绍了许多关于在生产环境中部署 RQ 的提示。
