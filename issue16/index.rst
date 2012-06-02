@@ -5,13 +5,13 @@ Hi Pythonistas,
 
 本周的新闻并不是很多，不过贴纸的事情倒是有很多要说的，我们这星期会收到新设计的贴纸，所以赶快给我们寄来回邮吧，我们的地址是：
 
-44 Byward Market Square, Suite 210
-Ottawa, Ontario Canada 
-K1P 7A2
+    44 Byward Market Square, Suite 210
+    Ottawa, Ontario Canada 
+    K1P 7A2
 
 RSS 订阅和存档可以在 `这里 <http://feeds.feedburner.com/pycodersweekly>`_ 和 `这里 <http://pycoders.com/archive.html>`_ 找到。
 
-`戳这里 <https://twitter.com/#!/pycoders>`_和我们签订契约成为魔法少女（少年）。 (◕‿‿◕)
+`戳这里 <https://twitter.com/#!/pycoders>`_ 和我们签订契约成为魔法少女（少年）。 (◕‿‿◕)
 
 --
 Mahdi and Mike 
@@ -37,7 +37,7 @@ Python 3.3.0 仍在继续开发，在5月31日发布了 Alpha 4 版本，包含�
 讨论
 ----
 
-`Python 与 C <http://www.reddit.com/r/Python/comments/u9by4/coming_to_python_from_c_writing_this_finally_made/>`
+`Python 与 C <http://www.reddit.com/r/Python/comments/u9by4/coming_to_python_from_c_writing_this_finally_made/>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 当一个 C 程序员开始学习 Python 的时候会出现什么样的情况呢？在这篇讨论里，作者贴了一段很简单的从 C 语言转换到 Python 的代码，从而引出了一系列对这段代码的优化，从这篇讨论中，我们或许能够了解如何用更加 Python 的方式来解决问题，如果你刚开始学习 Python，认真的读一下这篇讨论吧。
