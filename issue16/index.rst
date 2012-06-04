@@ -70,8 +70,8 @@ dnspython 是一个用 Python 写的 DNS 工具箱，换言之， dnspython 是�
 博文
 -----
 
-`Mongrel2 & Circus = 完全控制你的网络堆栈 <http://blog.ziade.org/2012/05/31/mongrel2-amp-circus-full-control-of-your-web-stack/>`_
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+:doc:`Mongrel2&Circul = web栈的完全控制 <mongrel2-amp-circus-full-control-of-your-web-stack>`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 由于配置 `Gunicorn <http://gunicorn.org/>`_ 失败.. Tarek Ziadé 决定用 Mongrel2 & Circus 来建立一个 WSGI 栈，自己的进程管理器。这篇文章介绍了如何建立一个网络堆栈，如果你并不想使用传统的 Gunicorn ，可以读一下这篇文章。
 
