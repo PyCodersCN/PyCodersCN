@@ -54,7 +54,7 @@ Django Podcast 本周邀请了 Kenneth Reitz 来讨论有关如何部署 Django 
 `Python 中最好的静态站点生成器是哪一个？ <http://www.reddit.com/r/Python/comments/uk95i/with_all_the_new_static_siteblog_generators_that/>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-静态博客生成器最近开始流行起来， `Github <https://github.com/>`_ 与 `Jekyll <http://jekyllrb.com/>`_ 的完美配合使你可以轻松的免费搭建你自己的静态站点， `Heroku<http://www.heroku.com/>`_也提供了便捷的方式来托管我们的静态站点。同时也出现了各种各样的静态站点生成器，可是哪一个是最好的呢？在这篇讨论中你可以轻松地找到最适合自己的那个。
+静态博客生成器最近开始流行起来， `Github <https://github.com/>`_ 与 `Jekyll <http://jekyllrb.com/>`_ 的完美配合使你可以轻松的免费搭建你自己的静态站点， `Heroku<http://www.heroku.com/>`_ 也提供了便捷的方式来托管我们的静态站点。同时也出现了各种各样的静态站点生成器，可是哪一个是最好的呢？在这篇讨论中你可以轻松地找到最适合自己的那个。
 
 项目
 ----
