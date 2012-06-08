@@ -46,7 +46,7 @@ Django Podcast 本周邀请了 Kenneth Reitz 来讨论有关如何部署 Django 
 讨论
 ----
 
-`为什么 PEP-3103 被拒绝了？ <http://www.reddit.com/r/Python/comments/ulze9/why_was_pep3103_rejected_it_proposed_the/>`
+`为什么 PEP-3103 被拒绝了？ <http://www.reddit.com/r/Python/comments/ulze9/why_was_pep3103_rejected_it_proposed_the/>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 想知道为什么 Python 中没有 Switch/Case 语句么？ PEP 3103 为什么会被拒绝？这篇在 `Reddit <http://www.reddit.com/r/python>`_ 上的讨论对这个话题进行了深入的剖析，去看看吧。
