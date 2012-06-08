@@ -103,4 +103,4 @@ Dear 是一个牛逼的音频分析库，如果你需要一个基于 Python 的�
 `Flask 的优点 <https://speakerdeck.com/u/kennethreitz/p/flasky-goodness>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-这篇由 Kenneth Reitz 在欧洲 DjangoCon 上的幻灯片，介绍了 Flask 的主要优点，同时也向 Django 开发者们展示了应该从 Flask 中学习些什么。
+这篇是 Kenneth Reitz 在欧洲 DjangoCon 上的幻灯片，介绍了 Flask 的主要优点，同时也向 Django 开发者们展示了应该从 Flask 中学习些什么。
