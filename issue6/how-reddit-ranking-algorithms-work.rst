@@ -1,7 +1,7 @@
 Reddit 评级算法的工作原理
 ==================================
 
-原文： `<http://eli.thegreenplace.net/2012/03/15/processing-xml-in-python-with-elementtree/>`_
+原文： `<http://amix.dk/blog/post/19588#How-Reddit-ranking-algorithms-work>`_
 
 译者： `Tiezhen WANG <https://github.com/wangtz>`_ 
 
